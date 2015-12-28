@@ -57,10 +57,12 @@ Warehouse('header');
         
         <tr>
           <td class='header'><table width='100%' border='0' cellspacing='0' cellpadding='0' class='logo_padding'>
+              <!--
               <tr>
                 <td><img src='assets/osis_logo.png' border='0' /></td>
                 <td align='right'><a href='http://www.os4ed.com' target=_blank ><img src='assets/os4ed_logo.png' height='62' width='66' border='0'/></a></td>
               </tr>
+              -->
             </table></td>
         </tr>
         <tr>
@@ -70,7 +72,7 @@ Warehouse('header');
                     <tr>
                       <td class='header_padding'><table width='100%' border='0' cellspacing='0' cellpadding='0'>
                           <tr>
-                            <td class='header_txt'>Student Information System</td>
+                            <td class='header_txt'>Feng Hua Management System/丰华管理系统</td>
                           </tr>
                         </table></td>
                     </tr>";
@@ -121,9 +123,9 @@ Warehouse('header');
 				  </table>
 				  </td>
                           </tr>
-                          <tr>
+                          <!--tr>
                             <td align='center'><p style='padding:6px;'>".$log_msg[1]['MESSAGE']."</p></td>
-                          </tr>
+                          </tr -->
                         </table></td>
                     </tr>
                   </table>
@@ -136,8 +138,7 @@ Warehouse('header');
               </tr>
               <tr>
                 <td align='center' class='copyright'>
-                openSIS is a product of Open Solutions for Education, Inc. (<a href='http://www.os4ed.com' target='_blank'>OS4Ed</a>).
-                and is licensed under the <a href='http://www.gnu.org/licenses/gpl.html' target='_blank'>GPL License</a>.
+                  Copyright 2016@Feng Hua Language Studies Centre/丰华语言学习中心
                 </td>
               </tr>
             </table></td>

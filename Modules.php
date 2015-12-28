@@ -593,7 +593,7 @@ echo "<tr>
 							  
 echo "<div id='submenu_1' style='display:none;'>
 
-<table cellspacing=0 celpadding=0 border=0 width=100%><tr><td width=60% valign=middle class='welcome'><b>Welcome to openSIS Student Information System</b></td><td width=40% class='version'>Version : ".$openSISVersion." | Release Date : ".$builddate."</td></tr></table> 
+<table cellspacing=0 celpadding=0 border=0 width=100%><tr><td width=60% valign=middle class='welcome'><b>Welcome to Feng Hua Management System</b></td></tr></table> 
 
 </div>"; 
 $i = 2;
@@ -1149,9 +1149,7 @@ echo "</div>";
 			<table width=\"100%\" border=\"0\">
   <tr>
     <td align='center' class='copyright'>
-       <center>openSIS is a product of Open Solutions for Education, Inc. (<a href='http://www.os4ed.com' target='_blank'>OS4Ed</a>).
-                and is licensed under the <a href='http://www.gnu.org/licenses/gpl.html' target='_blank'>GPL License</a>.
-                </center></td>
+       <center>Copyright 2016@Feng Hua Language Studies Centre/丰华语言学习中心</center></td>
   </tr>
 </table>
 			</td>

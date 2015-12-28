@@ -27,12 +27,12 @@
 #***************************************************************************************
 include('../../RedirectModulesInc.php');
 $menu['schoolsetup']['admin'] = array(
-						'schoolsetup/PortalNotes.php'=>'Portal Notes',
-						'schoolsetup/MarkingPeriods.php'=>'Marking Periods',
+						'schoolsetup/PortalNotes.php'=>'Portal Notes / 通知',
+						'schoolsetup/MarkingPeriods.php'=>'Marking Periods / 学期',
 						'schoolsetup/Calendar.php'=>'Calendars',
-						'schoolsetup/Periods.php'=>'Periods',
-						'schoolsetup/GradeLevels.php'=>'Grade Levels',
-                                                'schoolsetup/Rooms.php'=>'Rooms',
+						'schoolsetup/Periods.php'=>'Periods / 课时',
+						'schoolsetup/GradeLevels.php'=>'Grade Levels / 年级',
+                                                'schoolsetup/Rooms.php'=>'Rooms / 教室',
                          1=>'School',
                         'schoolsetup/Schools.php'=>'School Information',
     'schoolsetup/UploadLogo.php'=>'Upload School Logo',
@@ -40,7 +40,7 @@ $menu['schoolsetup']['admin'] = array(
 						'schoolsetup/CopySchool.php'=>'Copy School',
 						'schoolsetup/SystemPreference.php'=>'System Preference',
                                                 'schoolsetup/SchoolCustomFields.php'=>'School Custom Fields',
-                         2=>'Courses',
+                         2=>'Courses / 课程',
                         'schoolsetup/Courses.php'=>'Course Manager',
                         'schoolsetup/CourseCatalog.php'=>'Course Catalog',
                         'schoolsetup/PrintCatalog.php'=>'Print Catalog by Term', 

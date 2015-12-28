@@ -90,9 +90,7 @@ function ErrorMessage($errors,$code='error')
 								<table width=\"100%\" border=\"0\">
 								<tr>
     <td align='center' class='copyright'>
-       <center>openSIS is a product of Open Solutions for Education, Inc. (<a href='http://www.os4ed.com' target='_blank'>OS4Ed</a>).
-                and is licensed under the <a href='http://www.gnu.org/licenses/gpl.html' target='_blank'>GPL License</a>.
-                </center></td>
+       <center>Copyright 2016@Feng Hua Language Studies Centre/丰华语言学习中心</center></td>
   </tr>
 								</table>
 								</td>
@@ -153,9 +151,7 @@ function ErrorMessage1($errors,$code='error')
 							<table width=\"100%\" border=\"0\">
 							<tr>
 								<td align='center' class='copyright'>
-								   <center>openSIS is a product of Open Solutions for Education, Inc. (<a href='http://www.os4ed.com' target='_blank'>OS4Ed</a>).
-											and is licensed under the <a href='http://www.gnu.org/licenses/gpl.html' target='_blank'>GPL License</a>.
-											</center></td>
+								   <center>Copyright 2016@Feng Hua Language Studies Centre/丰华语言学习中心</center></td>
 							  </tr>
 							</table>
 							</td>
