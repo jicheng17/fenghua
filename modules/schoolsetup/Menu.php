@@ -33,20 +33,24 @@ $menu['schoolsetup']['admin'] = array(
 						'schoolsetup/Periods.php'=>'Periods / 课时',
 						'schoolsetup/GradeLevels.php'=>'Grade Levels / 年级',
                                                 'schoolsetup/Rooms.php'=>'Rooms / 教室',
-                         1=>'School',
-                        'schoolsetup/Schools.php'=>'School Information',
-    'schoolsetup/UploadLogo.php'=>'Upload School Logo',
-						'schoolsetup/Schools.php?new_school=true'=>'Add a School',
-						'schoolsetup/CopySchool.php'=>'Copy School',
-						'schoolsetup/SystemPreference.php'=>'System Preference',
-                                                'schoolsetup/SchoolCustomFields.php'=>'School Custom Fields',
-                         2=>'Courses / 课程',
+      //                    1=>'School',
+      //                   'schoolsetup/Schools.php'=>'School Information',
+    		// 			'schoolsetup/UploadLogo.php'=>'Upload School Logo',
+						// 'schoolsetup/Schools.php?new_school=true'=>'Add a School',
+						// 'schoolsetup/CopySchool.php'=>'Copy School',
+						// 'schoolsetup/SystemPreference.php'=>'System Preference',
+      //                   'schoolsetup/SchoolCustomFields.php'=>'School Custom Fields',
+                         2=>'Courses',
                         'schoolsetup/Courses.php'=>'Course Manager',
                         'schoolsetup/CourseCatalog.php'=>'Course Catalog',
-                        'schoolsetup/PrintCatalog.php'=>'Print Catalog by Term', 
-                        'schoolsetup/PrintCatalogGradeLevel.php'=>'Print Catalog by Grade Level', 
-                        'schoolsetup/PrintAllCourses.php'=>'Print all Courses',
-                        'schoolsetup/TeacherReassignment.php'=>'Teacher Re-Assignment'
+                        // 'schoolsetup/PrintCatalog.php'=>'Print Catalog by Term', 
+                        // 'schoolsetup/PrintCatalogGradeLevel.php'=>'Print Catalog by Grade Level', 
+                        // 'schoolsetup/PrintAllCourses.php'=>'Print all Courses',
+                        // 'schoolsetup/TeacherReassignment.php'=>'Teacher Re-Assignment',
+
+                         3=>'Reports',
+                        'schoolsetup/PrintCatalog.php'=>'Course by Term', 
+                        'schoolsetup/PrintCatalogGradeLevel.php'=>'Course by Grade Level' 
               );
 
 $menu['schoolsetup']['teacher'] = array(

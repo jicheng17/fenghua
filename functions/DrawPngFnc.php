@@ -48,7 +48,7 @@ function DrawLogo()
                          else {
                              $image= '<img src="assets/logo.png" alt="Logo" />';
                         }
-
+    $image= '<img src="assets/logoNA.png" alt=" " />';
 	return $image;
 }
 ?>

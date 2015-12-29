@@ -159,7 +159,7 @@ function Search($type,$extra=array(),$search_from_grade='')
 			echo '<tr><td align=right width=120>Last Name</td><td><input type=text name="last" size=30 class="cell_floating"></td></tr>';
 			echo '<tr><td align=right width=120>First Name</td><td><input type=text name="first" size=30 class="cell_floating"></td></tr>';
 			echo '<tr><td align=right width=120>Student ID</td><td><input type=text name="stuid" size=30 class="cell_floating"></td></tr>';
-		        echo '<tr><td align=right width=120>Alt ID</td><td><input type=text name="altid" size=30 class="cell_floating"></td></tr>';
+		        echo '<tr><td align=right width=120>NRIC/Passport ID</td><td><input type=text name="altid" size=30 class="cell_floating"></td></tr>';
                         echo '<tr><td align=right width=120>Address</td><td><input type=text name="addr" size=30 class="cell_floating"></td></tr>';
 
 			$list = DBGet(DBQuery("SELECT DISTINCT TITLE,ID,SORT_ORDER FROM school_gradelevels WHERE SCHOOL_ID='".UserSchool()."' ORDER BY SORT_ORDER"));
@@ -672,7 +672,7 @@ function Search_absence_summary($type,$extra=array(),$search_from_grade='')
 			echo '<tr><td align=right width=120>Last Name</td><td><input type=text name="last" size=30 class="cell_floating"></td></tr>';
 			echo '<tr><td align=right width=120>First Name</td><td><input type=text name="first" size=30 class="cell_floating"></td></tr>';
 			echo '<tr><td align=right width=120>Student ID</td><td><input type=text name="stuid" size=30 class="cell_floating"></td></tr>';
-		        echo '<tr><td align=right width=120>Alt ID</td><td><input type=text name="altid" size=30 class="cell_floating"></td></tr>';
+		        echo '<tr><td align=right width=120>NRIC/Passport ID</td><td><input type=text name="altid" size=30 class="cell_floating"></td></tr>';
                         echo '<tr><td align=right width=120>Address</td><td><input type=text name="addr" size=30 class="cell_floating"></td></tr>';
 
 			$list = DBGet(DBQuery('SELECT DISTINCT TITLE,ID,SORT_ORDER FROM school_gradelevels WHERE SCHOOL_ID=\''.UserSchool().'\' ORDER BY SORT_ORDER'));

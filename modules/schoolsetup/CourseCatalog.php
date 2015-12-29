@@ -362,7 +362,7 @@ function CreateList($dli='', $pli='', $sli='', $cli='', $mp='', $mp_name='')
         <A HREF=".str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF)."&create_excel=true&LO_save=1&_openSIS_PDF=true > <IMG SRC=assets/download.png border=0 vspace=0 hspace=0></A>
         <br>";
     $html .= "<table width=100%  style=\" font-family:Arial; font-size:12px;\" >";
-    $html .= "<tr><td  style=\"font-size:15px; font-weight:bold;\">". GetSchool(UserSchool())."<div style=\"font-size:12px;\">Student Schedules Report</div></td><td align=right style=\"padding-top:10px;\">". ProperDate(DBDate()) ."<br />Powered by openSIS</td></tr><tr><td colspan=2 style=\"border-top:1px solid #333;\">&nbsp;</td></tr></table>";
+    $html .= "<tr><td  style=\"font-size:15px; font-weight:bold;\">". GetSchool(UserSchool())."<div style=\"font-size:12px;\">Student Schedules Report</div></td><td align=right style=\"padding-top:10px;\">". ProperDate(DBDate()) ."</td></tr><tr><td colspan=2 style=\"border-top:1px solid #333;\">&nbsp;</td></tr></table>";
 
     ########################################List Output Generation ####################################################
 
@@ -370,7 +370,7 @@ function CreateList($dli='', $pli='', $sli='', $cli='', $mp='', $mp_name='')
    if($_REQUEST['print']=='list')
 	{
 	echo "<table width=100%  style=\" font-family:Arial; font-size:12px;\" >";
-	echo "<tr><td  style=\"font-size:15px; font-weight:bold;\">". GetSchool(UserSchool())."<div style=\"font-size:12px;\">Course Catalog</div></td><td align=right style=\"padding-top:10px;\">". ProperDate(DBDate()) ."<br />Powered by openSIS</td></tr><tr><td colspan=2 style=\"border-top:1px solid #333;\">&nbsp;</td></tr></table>";
+	echo "<tr><td  style=\"font-size:15px; font-weight:bold;\">". GetSchool(UserSchool())."<div style=\"font-size:12px;\">Course Catalog</div></td><td align=right style=\"padding-top:10px;\">". ProperDate(DBDate()) ."</td></tr><tr><td colspan=2 style=\"border-top:1px solid #333;\">&nbsp;</td></tr></table>";
 	 }
 	echo '<style type="text/css">.print-div td{font-size:12px;font-family:arial;}</style><div class="print-div">';
     ListOutputFloat($ret,$columns,'Course','Courses','','',array('search'=>false,'count'=>false));

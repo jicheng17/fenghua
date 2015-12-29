@@ -84,7 +84,7 @@ if($_REQUEST['search_modfunc']=='search_fnc' || !$_REQUEST['search_modfunc'])
 			echo '<div style="height:10px;"></div>';
 			echo '<input type=hidden name=sql_save_session value=true />';
 			echo '<div id="addiv">';
-			echo '<div><label onclick="show_search_div();" style="cursor:pointer; font-weight:bold; font-size:12px;  text-decoration:underline;">Advanced Search</label></div>';
+			//echo '<div><label onclick="show_search_div();" style="cursor:pointer; font-weight:bold; font-size:12px;  text-decoration:underline;">Advanced Search</label></div>';
 			echo '</div>';
 			
 			echo '<div id="searchdiv" style="display:none; width:410px;">';
@@ -130,13 +130,13 @@ if($_REQUEST['search_modfunc']=='search_fnc' || !$_REQUEST['search_modfunc'])
 			
 			
 			echo '<TABLE width=100%><TR><TD align=center><BR>';
-			if(User('PROFILE')=='admin')
-			{
-				echo '<INPUT type=checkbox name=address_group value=Y'.(Preferences('DEFAULT_FAMILIES')=='Y'?' CHECKED':'').'>Group by Family<BR>';
-				echo '<INPUT type=checkbox name=_search_all_schools value=Y'.(Preferences('DEFAULT_ALL_SCHOOLS')=='Y'?' CHECKED':'').'>Search All Schools<BR>';
-			}
+			// if(User('PROFILE')=='admin')
+			// {
+			// 	echo '<INPUT type=checkbox name=address_group value=Y'.(Preferences('DEFAULT_FAMILIES')=='Y'?' CHECKED':'').'>Group by Family<BR>';
+			// 	echo '<INPUT type=checkbox name=_search_all_schools value=Y'.(Preferences('DEFAULT_ALL_SCHOOLS')=='Y'?' CHECKED':'').'>Search All Schools<BR>';
+			// }
                         if($_REQUEST['modname']!='students/StudentReenroll.php')
-			echo '<INPUT type=checkbox name=include_inactive value=Y>Include Inactive Students<BR>';
+			echo '<INPUT type=checkbox name=include_inactive value=Y checked>Include Inactive Students<BR>';
 			echo '<BR>';
 			
 			if($extra['pdf']!=true)

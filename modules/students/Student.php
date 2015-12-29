@@ -1925,7 +1925,7 @@ if(UserStudentID() || $_REQUEST['student_id']=='new')
                                 $last_stu=$_SESSION['students_order'][$last_stu];
                                 echo "<div style='text-align:right; padding-left:10px;'><table width='100%' cellpadding='0' cellspacing='0'><tr><td align='right'>";
 				
-                                echo "<div style='margin-right:15px; font-weight:bold; font-size:14px;'>"."Showing ".(count($_SESSION['students_order'])>1?$_SESSION['count']:'1')." of ".(count($_SESSION['students_order'])>1?$_SESSION['total_stu']:'1')."</div>";
+                                //echo "<div style='margin-right:15px; font-weight:bold; font-size:14px;'>"."Showing ".(count($_SESSION['students_order'])>1?$_SESSION['count']:'1')." of ".(count($_SESSION['students_order'])>1?$_SESSION['total_stu']:'1')."</div>";
 				echo "</td><td align='right' width='250px' style='padding-top:4px;'>";
                                 echo '<div style="margin-right:15px; margin-bottom:8px;">';
 				if(count($_SESSION['students_order'])>1)

@@ -27,8 +27,8 @@
 #***************************************************************************************
 include('../../RedirectModulesInc.php');
 $menu['students']['admin'] = array(
-						'students/Student.php'=>'Student Info',
-						'students/Student.php&include=GeneralInfoInc&student_id=new'=>'Add a Student',
+						'students/Student.php'=>'Student Info / 学生信息',
+						'students/Student.php&include=GeneralInfoInc&student_id=new'=>'Add a Student / 添加学生',
 						'students/AssignOtherInfo.php'=>'Group Assign Student Info',
 //						
                                                 'students/StudentReenroll.php'=>'Student Re Enroll',

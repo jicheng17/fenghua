@@ -38,9 +38,9 @@ include_once('modules/students/includes/FunctionsInc.php');
 #$ethnic_option = array('White, Non-Hispanic'=>'White, Non-Hispanic','Black, Non-Hispanic'=>'Black, Non-Hispanic','Amer. Indian or Alaskan Native'=>'Amer. Indian or Alaskan Native','Asian or Pacific Islander'=>'Asian or Pacific Islander','Hispanic'=>'Hispanic','Other'=>'Other');
 
 
-$ethnic_option = array('White, Non-Hispanic'=>'White, Non-Hispanic','Black, Non-Hispanic'=>'Black, Non-Hispanic','Hispanic'=>'Hispanic','American Indian or Native Alaskan'=>'American Indian or Native Alaskan','Pacific Islander'=>'Pacific Islander','Asian'=>'Asian','Indian'=>'Indian','Middle Eastern'=>'Middle Eastern','African'=>'African','Mixed Race'=>'Mixed Race','Other'=>'Other');
+$ethnic_option = array('Chinese'=>'Chinese','Malay'=>'Malay','Indian'=>'Indian','Other'=>'Other');
 
-$language_option = array('English'=>'English','Arabic'=>'Arabic','Bengali'=>'Bengali','Chinese'=>'Chinese','French'=>'French','German'=>'German','Haitian Creole'=>'Haitian Creole','Hindi'=>'Hindi','Italian'=>'Italian','Japanese'=>'Japanese','Korean'=>'Korean','Malay'=>'Malay','Polish'=>'Polish','Portuguese'=>'Portuguese','Russian'=>'Russian','Somali'=>'Somali','Spanish'=>'Spanish','Thai'=>'Thai','Turkish'=>'Turkish','Urdu'=>'Urdu','Vietnamese'=>'Vietnamese');
+$language_option = array('English'=>'English','Arabic'=>'Arabic','Chinese'=>'Chinese','French'=>'French','German'=>'German','Hindi'=>'Hindi','Italian'=>'Italian','Japanese'=>'Japanese','Korean'=>'Korean','Malay'=>'Malay','Thai'=>'Thai','Vietnamese'=>'Vietnamese');
 
 
 
@@ -58,10 +58,10 @@ else
 	echo '<DIV id=student_name><div style="font-size:14px; font-weight:bold;" onclick=\'addHTML("<TABLE><TR><TD>'.str_replace('"','\"',TextInput($student['FIRST_NAME'],'students[FIRST_NAME]','<FONT color=red>First</FONT>','maxlength=50 style="font-size:14px; font-weight:bold;"',false)).'</TD><TD>'.str_replace('"','\"',TextInput($student['MIDDLE_NAME'],'students[MIDDLE_NAME]','Middle','size=3 maxlength=50 style="font-size:14px; font-weight:bold;"',false)).'</TD><TD>'.str_replace('"','\"',TextInput($student['LAST_NAME'],'students[LAST_NAME]','<FONT color=red>Last</FONT>','maxlength=50 style="font-size:14px; font-weight:bold;"',false)).'</TD><TD>'.str_replace('"','\"',SelectInput($student['NAME_SUFFIX'],'students[NAME_SUFFIX]','Suffix',array('Jr.'=>'Jr.','Sr.'=>'Sr.','II'=>'II','III'=>'III','IV'=>'IV','V'=>'V'),'','style="font-size:14px; font-weight:bold;"',false)).'</TD></TR></TABLE>","student_name",true);\'>'.$student['FIRST_NAME'].' '.$student['MIDDLE_NAME'].' '.$student['LAST_NAME'].' '.$student['NAME_SUFFIX'].'</div></DIV>';
 echo'</td></tr>';
 
+echo '<tr><td>Common Name / 中文</td><td>:</td><td>'.TextInput($student['COMMON_NAME'],'students[COMMON_NAME]','','size=10 class=cell_medium maxlength=10').'</td></tr>';
 echo '<tr><td>Estimated Grad. Date </td><td>:</td><td>'.DateInputAY($student['ESTIMATED_GRAD_DATE'],'students[ESTIMATED_GRAD_DATE]','1').'</td></tr>';
 echo '<tr><td>Gender</td><td>:</td><td>'.SelectInput($student['GENDER'],'students[GENDER]','',array('Male'=>'Male','Female'=>'Female'),'N/A','').'</td></tr>';
 echo '<tr><td>Ethnicity</td><td>:</td><td>'.SelectInput($student['ETHNICITY'],'students[ETHNICITY]','',$ethnic_option,'N/A','').'</td></tr>';
-echo '<tr><td>Common Name</td><td>:</td><td>'.TextInput($student['COMMON_NAME'],'students[COMMON_NAME]','','size=10 class=cell_medium maxlength=10').'</td></tr>';
 echo '<input type=hidden id=current_date value='.date('Y-m-d').'>';
 echo '<tr><td>Date of Birth<font color="red">*</font></td><td>:</td><td>'.DateInputAY($student['BIRTHDATE'],'students[BIRTHDATE]','2').'</td></tr>';
 echo '<tr><td>Primary Language</td><td>:</td><td>'.SelectInput($student['LANGUAGE'],'students[LANGUAGE]','',$language_option,'N/A','').'</td></tr>';
@@ -266,7 +266,7 @@ else
 
 // ----------------------------- Alternate id ---------------------------- //
 
-echo '<tr><td>Alternate ID</td><td>:</td><td>';
+echo '<tr><td>NRIC/Passport ID</td><td>:</td><td>';
 echo TextInput($student['ALT_ID'],'students[ALT_ID]','','size=10 class=cell_medium maxlength=45');
 echo '</td></tr>';
 
