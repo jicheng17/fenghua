@@ -40,7 +40,7 @@ if(clean_param($_REQUEST['modfunc'],PARAM_ALPHAMOD)=='save')
 		}
      
         	echo "<table width=100%  style=\" font-family:Arial; font-size:12px;\" >";
-			echo "<tr><td width=105>".DrawLogo()."</td><td style=\"font-size:15px; font-weight:bold; padding-top:20px;\">". GetSchool(UserSchool())."<div style=\"font-size:12px;\">Student Advanced Report</div></td><td align=right style=\"padding-top:20px;\">". ProperDate(DBDate()) ."<br />Powered by openSIS</td></tr><tr><td colspan=3 style=\"border-top:1px solid #333;\">&nbsp;</td></tr></table>";
+			echo "<tr><td style=\"font-size:15px; font-weight:bold; padding-top:20px;\">". GetSchool(UserSchool())."<div style=\"font-size:12px;\">Student Advanced Report</div></td><td align=right style=\"padding-top:20px;\">". ProperDate(DBDate()) ."</td></tr><tr><td colspan=3 style=\"border-top:1px solid #333;\">&nbsp;</td></tr></table>";
 			echo "<table >";
 		include('modules/miscellaneous/Export.php');
 	}
@@ -115,16 +115,16 @@ echo "<FORM action=Modules.php?modname=$_REQUEST[modname]&modfunc=call method=PO
         }
 	else
 	{
-			Widgets('course');
-			Widgets('request');
-			Widgets('activity');
-			Widgets('absences');
-			Widgets('gpa');
-			Widgets('class_rank');
-			Widgets('letter_grade');
-			Widgets('eligibility');
+			// Widgets('course');
+			// Widgets('request');
+			// Widgets('activity');
+			// Widgets('absences');
+			// Widgets('gpa');
+			// Widgets('class_rank');
+			// Widgets('letter_grade');
+			// Widgets('eligibility');
 
-                        $extra['search'] .= '<TR><TD align=right width=120>Include courses active as of </TD><TD>'.DateInputAY('','include_active_date',3).'</TD></TR>';
+   //                      $extra['search'] .= '<TR><TD align=right width=120>Include courses active as of </TD><TD>'.DateInputAY('','include_active_date',3).'</TD></TR>';
 			$extra['new'] = true;
 	
 			Search('student_id',$extra);

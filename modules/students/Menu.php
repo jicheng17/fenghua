@@ -29,22 +29,23 @@ include('../../RedirectModulesInc.php');
 $menu['students']['admin'] = array(
 						'students/Student.php'=>'Student Info / 学生信息',
 						'students/Student.php&include=GeneralInfoInc&student_id=new'=>'Add a Student / 添加学生',
-						'students/AssignOtherInfo.php'=>'Group Assign Student Info',
-//						
-                                                'students/StudentReenroll.php'=>'Student Re Enroll',
+						'students/Upload.php'=>'Upload Student Photo',
+
+						//'students/AssignOtherInfo.php'=>'Group Assign Student Info',
+						//'students/StudentReenroll.php'=>'Student Re Enroll',
 						1=>'Reports',
 						'students/AdvancedReport.php'=>'Advanced Report',
-						'students/AddDrop.php'=>'Add / Drop Report',
-						'students/Letters.php'=>'Print Letters',
-						'students/MailingLabels.php'=>'Print Mailing Labels',
-						'students/StudentLabels.php'=>'Print Student Labels',
-						'students/PrintStudentInfo.php'=>'Print Student Info',
-                        'students/PrintStudentContactInfo.php'=>'Print Student Contact Info',
-                        'students/GoalReport.php'=>'Print Goals & Progresses',
-                        'students/EnrollmentReport.php'=>'Student Enrollment Report',
+						'students/PrintStudentInfo.php'=>'Student Info Report',
+
+						// 'students/AddDrop.php'=>'Add / Drop Report',
+						// 'students/Letters.php'=>'Print Letters',
+						// 'students/MailingLabels.php'=>'Print Mailing Labels',
+						// 'students/StudentLabels.php'=>'Print Student Labels',
+      //                   'students/PrintStudentContactInfo.php'=>'Print Student Contact Info',
+      //                   'students/GoalReport.php'=>'Print Goals & Progresses',
+      //                   'students/EnrollmentReport.php'=>'Student Enrollment Report',
 						2=>'Setup',
 						'students/StudentFields.php'=>'Student Fields',
-//						
 						'students/EnrollmentCodes.php'=>'Enrollment Codes',
 						'students/Upload.php'=>'Upload Student Photo',
 						'students/Upload.php?modfunc=edit'=>'Update Student Photo'

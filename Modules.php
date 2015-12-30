@@ -593,7 +593,7 @@ echo "<tr>
 							  
 echo "<div id='submenu_1' style='display:none;'>
 
-<table cellspacing=0 celpadding=0 border=0 width=100%><tr><td width=60% valign=middle class='welcome'><b>Welcome to Feng Hua Management System</b></td></tr></table> 
+<table cellspacing=0 celpadding=0 border=0 width=100%><tr><td width=60% valign=middle class='welcome'><b>Welcome to Feng Hua Management system(command)</b></td></tr></table> 
 
 </div>"; 
 $i = 2;

@@ -80,46 +80,46 @@ if($_REQUEST['search_modfunc']=='search_fnc' || !$_REQUEST['search_modfunc'])
 			
 			
 			# ---   Advanced Search Start ---------------------------------------------------------- #
-			echo '<div style="height:10px;"></div>';
-			echo '<input type=hidden name=sql_save_session value=true />';
-			echo '<div id="addiv">';
-			echo '<div><label onclick="show_search_div();" style="cursor:pointer; font-weight:bold; font-size:12px;  text-decoration:underline;">Advanced Search</label></div>';
-			echo '</div>';
+			// echo '<div style="height:10px;"></div>';
+			// echo '<input type=hidden name=sql_save_session value=true />';
+			// echo '<div id="addiv">';
+			// echo '<div><label onclick="show_search_div();" style="cursor:pointer; font-weight:bold; font-size:12px;  text-decoration:underline;">Advanced Search</label></div>';
+			// echo '</div>';
 			
-			echo '<div id="searchdiv" style="display:none; width:410px;">';
-			echo '<div>&laquo;&nbsp;<label onclick="hide_search_div();" style="cursor:pointer; font-weight:bold; font-size:12px;  text-decoration:underline;">Back to Basic Search</label></div>';
-			echo '<div style="height:14px;"></div>';
-			echo '<div style=text-align:left;padding-left:74px;padding-bottom:14px;>Comments&nbsp;<input type=text name="mp_comment" size=30 class="cell_floating"></div>';
-			echo '<div style="margin-left:22px; padding-bottom:5px;"><b>Birthday</b></div>';
-			echo '<div style=text-align:left;padding-left:98px;padding-bottom:4px;>From: '.SearchDateInput('day_from_birthdate','month_from_birthdate','','Y','Y','').'</div>';
-			echo '<div style=text-align:left;padding-left:110px;padding-bottom:20px;>To: '.SearchDateInput('day_to_birthdate','month_to_birthdate','','Y','Y','').'</div>';
-			echo '<div style="margin-left:22px; padding-bottom:5px;"><b>Goal and Progress</b></div>';
-			echo '<table><tr><td width="120" align="right">Goal Title</td><td><input type=text name="goal_title" size=30 class="cell_floating"></td></tr>';
-			echo '<tr><td align="right">Goal Description</td><td><input type=text name="goal_description" size=30 class="cell_floating"></td></tr>';
-			echo '<tr><td align="right">Progress Period</td><td><input type=text name="progress_name" size=30 class="cell_floating"></td></tr>';
-			echo '<tr><td align="right">Progress Assessment</td><td><input type=text name="progress_description" size=30 class="cell_floating"></td></tr></table><br />';
+			// echo '<div id="searchdiv" style="display:none; width:410px;">';
+			// echo '<div>&laquo;&nbsp;<label onclick="hide_search_div();" style="cursor:pointer; font-weight:bold; font-size:12px;  text-decoration:underline;">Back to Basic Search</label></div>';
+			// echo '<div style="height:14px;"></div>';
+			// echo '<div style=text-align:left;padding-left:74px;padding-bottom:14px;>Comments&nbsp;<input type=text name="mp_comment" size=30 class="cell_floating"></div>';
+			// echo '<div style="margin-left:22px; padding-bottom:5px;"><b>Birthday</b></div>';
+			// echo '<div style=text-align:left;padding-left:98px;padding-bottom:4px;>From: '.SearchDateInput('day_from_birthdate','month_from_birthdate','','Y','Y','').'</div>';
+			// echo '<div style=text-align:left;padding-left:110px;padding-bottom:20px;>To: '.SearchDateInput('day_to_birthdate','month_to_birthdate','','Y','Y','').'</div>';
+			// echo '<div style="margin-left:22px; padding-bottom:5px;"><b>Goal and Progress</b></div>';
+			// echo '<table><tr><td width="120" align="right">Goal Title</td><td><input type=text name="goal_title" size=30 class="cell_floating"></td></tr>';
+			// echo '<tr><td align="right">Goal Description</td><td><input type=text name="goal_description" size=30 class="cell_floating"></td></tr>';
+			// echo '<tr><td align="right">Progress Period</td><td><input type=text name="progress_name" size=30 class="cell_floating"></td></tr>';
+			// echo '<tr><td align="right">Progress Assessment</td><td><input type=text name="progress_description" size=30 class="cell_floating"></td></tr></table><br />';
 			
-			echo '<div style="margin-left:22px; padding-bottom:5px;"><b>Medical</b></div>';
-			echo '<div style=text-align:left;padding-left:103px;padding-bottom:4px;>Date '.SearchDateInput('med_day','med_month','med_year','Y','Y','Y').'</div>';
-			echo '<div style=text-align:left;padding-left:60px;padding-bottom:14px;>Doctor\'s Note <input type=text name="doctors_note_comments" size=30 class="cell_floating"></div>';
+			// echo '<div style="margin-left:22px; padding-bottom:5px;"><b>Medical</b></div>';
+			// echo '<div style=text-align:left;padding-left:103px;padding-bottom:4px;>Date '.SearchDateInput('med_day','med_month','med_year','Y','Y','Y').'</div>';
+			// echo '<div style=text-align:left;padding-left:60px;padding-bottom:14px;>Doctor\'s Note <input type=text name="doctors_note_comments" size=30 class="cell_floating"></div>';
 			
-			echo '<div style="margin-left:22px; padding-bottom:5px;"><b>Immunization</b></div>';
-			echo '<div style=text-align:left;padding-left:102px;padding-bottom:4px;>Type <input type=text name="type" size=30 class="cell_floating"></div>';
-			echo '<div style=text-align:left;padding-left:104px;padding-bottom:4px;>Date '.SearchDateInput('imm_day','imm_month','imm_year','Y','Y','Y').'</div>';
-			echo '<div style=text-align:left;padding-left:76px;padding-bottom:14px;>Comments <input type=text name="imm_comments" size=30 class="cell_floating"></div>';
+			// echo '<div style="margin-left:22px; padding-bottom:5px;"><b>Immunization</b></div>';
+			// echo '<div style=text-align:left;padding-left:102px;padding-bottom:4px;>Type <input type=text name="type" size=30 class="cell_floating"></div>';
+			// echo '<div style=text-align:left;padding-left:104px;padding-bottom:4px;>Date '.SearchDateInput('imm_day','imm_month','imm_year','Y','Y','Y').'</div>';
+			// echo '<div style=text-align:left;padding-left:76px;padding-bottom:14px;>Comments <input type=text name="imm_comments" size=30 class="cell_floating"></div>';
 			
-			echo '<div style="margin-left:22px; padding-bottom:5px;"><b>Medical Alert</b></div>';
-			echo '<div style=text-align:left;padding-left:104px;padding-bottom:4px;>Date '.SearchDateInput('ma_day','ma_month','ma_year','Y','Y','Y').'</div>';
-			echo '<div style=text-align:left;padding-left:102px;padding-bottom:14px;>Alert <input type=text name="med_alrt_title" size=30 class="cell_floating"></div>';
+			// echo '<div style="margin-left:22px; padding-bottom:5px;"><b>Medical Alert</b></div>';
+			// echo '<div style=text-align:left;padding-left:104px;padding-bottom:4px;>Date '.SearchDateInput('ma_day','ma_month','ma_year','Y','Y','Y').'</div>';
+			// echo '<div style=text-align:left;padding-left:102px;padding-bottom:14px;>Alert <input type=text name="med_alrt_title" size=30 class="cell_floating"></div>';
 			
-			echo '<div style="margin-left:22px; padding-bottom:5px;"><b>Nurse Visit</b></div>';
-			echo '<div style=text-align:left;padding-left:104px;padding-bottom:4px;>Date '.SearchDateInput('nv_day','nv_month','nv_year','Y','Y','Y').'</div>';
-			echo '<div style=text-align:left;padding-left:89px;padding-bottom:4px;>Reason <input type=text name="reason" size=30 class="cell_floating"></div>';
-			echo '<div style=text-align:left;padding-left:96px;padding-bottom:4px;>Result <input type=text name="result" size=30 class="cell_floating"></div>';
-			echo '<div style=text-align:left;padding-left:76px;padding-bottom:4px;>Comments <input type=text name="med_vist_comments" size=30 class="cell_floating"></div>';
+			// echo '<div style="margin-left:22px; padding-bottom:5px;"><b>Nurse Visit</b></div>';
+			// echo '<div style=text-align:left;padding-left:104px;padding-bottom:4px;>Date '.SearchDateInput('nv_day','nv_month','nv_year','Y','Y','Y').'</div>';
+			// echo '<div style=text-align:left;padding-left:89px;padding-bottom:4px;>Reason <input type=text name="reason" size=30 class="cell_floating"></div>';
+			// echo '<div style=text-align:left;padding-left:96px;padding-bottom:4px;>Result <input type=text name="result" size=30 class="cell_floating"></div>';
+			// echo '<div style=text-align:left;padding-left:76px;padding-bottom:4px;>Comments <input type=text name="med_vist_comments" size=30 class="cell_floating"></div>';
 			
 			
-			echo '</div>';
+			// echo '</div>';
 			
 			
 			
@@ -129,13 +129,13 @@ if($_REQUEST['search_modfunc']=='search_fnc' || !$_REQUEST['search_modfunc'])
 			
 			
 			echo '<TABLE width=100%><TR><TD align=center><BR>';
-			if(User('PROFILE')=='admin')
-			{
-				echo '<INPUT type=checkbox name=address_group value=Y'.(Preferences('DEFAULT_FAMILIES')=='Y'?' CHECKED':'').'>Group by Family<BR>';
-				echo '<INPUT type=checkbox name=_search_all_schools value=Y'.(Preferences('DEFAULT_ALL_SCHOOLS')=='Y'?' CHECKED':'').'>Search All Schools<BR>';
-			}
+			// if(User('PROFILE')=='admin')
+			// {
+			// 	echo '<INPUT type=checkbox name=address_group value=Y'.(Preferences('DEFAULT_FAMILIES')=='Y'?' CHECKED':'').'>Group by Family<BR>';
+			// 	echo '<INPUT type=checkbox name=_search_all_schools value=Y'.(Preferences('DEFAULT_ALL_SCHOOLS')=='Y'?' CHECKED':'').'>Search All Schools<BR>';
+			// }
                         if($_REQUEST['modname']!='students/StudentReenroll.php')
-			echo '<INPUT type=checkbox name=include_inactive value=Y>Include Inactive Students<BR>';
+			echo '<INPUT type=checkbox name=include_inactive value=Y checked>Include Inactive Students<BR>';
 			echo '<BR>';
 			
 			if($extra['pdf']!=true)

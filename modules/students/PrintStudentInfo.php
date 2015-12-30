@@ -62,7 +62,7 @@ if($_REQUEST['modfunc']=='save')
 		{
 			$_SESSION['student_id'] = $student['STUDENT_ID'];
                                                         echo "<table width=100% style=\" font-family:Arial; font-size:12px;\" >";
-                                                                                echo "<tr><td width=105>".DrawLogo()."</td><td  style=\"font-size:15px; font-weight:bold; padding-top:20px;\">". GetSchool(UserSchool())."<div style=\"font-size:12px;\">Student Information Report</div></td><td align=right style=\"padding-top:20px;\">". ProperDate(DBDate()) ."<br />Powered by openSIS</td></tr><tr><td colspan=3 style=\"border-top:1px solid #333;\">&nbsp;</td></tr></table>";
+                                                        echo "<tr><td  style=\"font-size:15px; font-weight:bold; padding-top:20px;\">". GetSchool(UserSchool())."<div style=\"font-size:12px;\">Student Information Report</div></td><td align=right style=\"padding-top:20px;\">". ProperDate(DBDate()) ."</td></tr><tr><td colspan=3 style=\"border-top:1px solid #333;\">&nbsp;</td></tr></table>";
 
                                                         echo "<table cellspacing=0  border=\"0\" style=\"border-collapse:collapse\">";
                                                                                 echo "<tr><td colspan=3 style=\"height:18px\"></td></tr>";
@@ -976,15 +976,15 @@ if(!$_REQUEST['modfunc'])
 	$extra['options']['search'] = false;
 	$extra['new'] = true;
 
-	Widgets('mailing_labels');
-	Widgets('course');
-	Widgets('request');
-	Widgets('activity');
-	Widgets('absences');
-	Widgets('gpa');
-	Widgets('class_rank');
-	Widgets('letter_grade');
-	Widgets('eligibility');
+	// Widgets('mailing_labels');
+	// Widgets('course');
+	// Widgets('request');
+	// Widgets('activity');
+	// Widgets('absences');
+	// Widgets('gpa');
+	// Widgets('class_rank');
+	// Widgets('letter_grade');
+	// Widgets('eligibility');
 
 	Search('student_id',$extra);
 	if($_REQUEST['search_modfunc']=='list')
