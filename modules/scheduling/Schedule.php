@@ -61,9 +61,9 @@ ini_set('memory_limit', '12000000M');
 ini_set('max_execution_time','50000');
 DrawBC("Scheduling >> ".ProgramTitle());
 $tot_cp='';
-Widgets('activity');
-Widgets('course');
-Widgets('request');
+//Widgets('activity');
+//Widgets('course');
+//Widgets('request');
 
 if(!$_SESSION['student_id']){
 Search('student_id',$extra);

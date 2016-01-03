@@ -47,14 +47,14 @@ if(User('PROFILE')=='admin')
 		echo '<TR><TD align=right>First Name</TD><TD><INPUT type=text class=cell_floating name=first></TD></TR>';
 		echo '<TR><TD align=right>Username</TD><TD><INPUT type=text class=cell_floating name=username></TD></TR>';
                 $profiles=  DBGet(DBQuery('SELECT * FROM user_profiles WHERE profile = \''.'parent'.'\''));
-                $options['']='N/A';
-                $options['none']='No Access';
+                //$options['']='N/A';
+                //$options['none']='No Access';
                 foreach($profiles as $key=>$value)
                 {
                     $options[$value['ID']]=$value['TITLE'];
                 }
 
-                $options['parent']= 'Parent w/Custom';
+                //$options['parent']= 'Parent w/Custom';
 
                 if($extra['profile']=='parent')
 			$options = array('3'=>$options[3]);
@@ -66,9 +66,9 @@ if(User('PROFILE')=='admin')
 			echo $extra['search'];
 		echo '<TR><TD colspan=2 align=center>';
 		
-		if(User('PROFILE')=='admin')
-			echo '<INPUT type=checkbox name=_search_all_schools value=Y'.(Preferences('DEFAULT_ALL_SCHOOLS')=='Y'?' CHECKED':'').'>Search All Schools<BR>';
-			echo '<INPUT type=checkbox name=_dis_user value=Y>Include Disabled User<BR><br>';
+		// if(User('PROFILE')=='admin')
+		// 	echo '<INPUT type=checkbox name=_search_all_schools value=Y'.(Preferences('DEFAULT_ALL_SCHOOLS')=='Y'?' CHECKED':'').'>Search All Schools<BR>';
+			echo '<INPUT type=checkbox name=_dis_user value=Y checked>Include Disabled User<BR><br>';
 		
 		echo "<INPUT type=SUBMIT class=btn_medium value='Submit' >&nbsp<INPUT type=RESET class=btn_medium value='Reset'>";
 		echo '</TD></TR>';

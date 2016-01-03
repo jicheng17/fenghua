@@ -26,37 +26,35 @@
 #
 #***************************************************************************************
 include('../../RedirectModulesInc.php');
-$menu['users']['admin'] = array(
-
-						//'users/Preferences.php'=>'Preferences',
-      //                                           1=>'Report',
-      //                                           'users/UserAdvancedReport.php'=>'Advanced Report',
-      //                                           2=>'Users',
-						'users/User.php'=>'Parent / 家长',
-                        3=>'Staff / 员工',
-                            'users/Staff.php'=>'Staff Info / 查询',
-                            'users/Staff.php&staff_id=new'=>'Add a Staff / 添加员工',
-						// 4=>'Setup',
-						// 'users/Profiles.php'=>'Profiles',
-						// 'users/UserFields.php'=>'User Fields',
-      //                                           'users/StaffFields.php'=>'Staff Fields',
-//                                                'users/UploadUserPhoto.php'=>'Upload Staff\'s Photo',
-//						'users/UploadUserPhoto.php?modfunc=edit'=>'Update Staff\'s Photo',
-						5=>'Teacher Programs',
-                                                
+$menu['eligibility']['admin'] = array(
+						'eligibility/Student.php'=>'Student Screen',
+						'eligibility/AddActivity.php'=>'Add Activity',
+						1=>'Reports',
+						'eligibility/StudentList.php'=>'Student List',
+						'eligibility/TeacherCompletion.php'=>'Teacher Completion',
+						2=>'Setup',
+						'eligibility/Activities.php'=>'Activities',
+						'eligibility/EntryTimes.php'=>'Entry Times'
 					);
 
-$menu['users']['teacher'] = array(
-						'users/Staff.php'=>'Staff Info'
-						// 'users/Preferences.php'=>'Preferences'
+$menu['eligibility']['teacher'] = array(
+						'eligibility/EnterEligibility.php'=>'Enter Extracurricular'
 					);
 
-$menu['users']['parent'] = array(
-						'users/User.php'=>'General Info',
-						'users/Preferences.php'=>'Preferences'
+$menu['eligibility']['parent'] = array(
+						'eligibility/Student.php'=>'Student Screen',
+						'eligibility/StudentList.php'=>'Student List'
 					);
 
-$exceptions['users'] = array(
-						'users/User.php?staff_id=new'=>true
+$menu['users']['admin'] += array(
+						'users/TeacherPrograms.php?include=eligibility/EnterEligibility.php'=>'Enter Extracurricular'
+					);
+
+$exceptions['eligibility'] = array(
+						'eligibility/AddActivity.php'=>true
+					);
+
+$exceptions['users'] += array(
+						'users/TeacherPrograms.php?include=eligibility/EnterEligibility.php'=>true
 					);
 ?>

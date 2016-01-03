@@ -27,9 +27,9 @@
 #***************************************************************************************
 include('../../RedirectModulesInc.php');
 $menu['schoolsetup']['admin'] = array(
-						'schoolsetup/PortalNotes.php'=>'Portal Notes / 通知',
-						'schoolsetup/MarkingPeriods.php'=>'Marking Periods / 学期',
-						'schoolsetup/Calendar.php'=>'Calendars',
+						'schoolsetup/PortalNotes.php'=>'Notices / 通知',
+						'schoolsetup/MarkingPeriods.php'=>'Periods / 学期',
+						'schoolsetup/Calendar.php'=>'Calendars / 日历',
 						'schoolsetup/Periods.php'=>'Periods / 课时',
 						'schoolsetup/GradeLevels.php'=>'Grade Levels / 年级',
                                                 'schoolsetup/Rooms.php'=>'Rooms / 教室',
@@ -40,7 +40,7 @@ $menu['schoolsetup']['admin'] = array(
 						// 'schoolsetup/CopySchool.php'=>'Copy School',
 						// 'schoolsetup/SystemPreference.php'=>'System Preference',
       //                   'schoolsetup/SchoolCustomFields.php'=>'School Custom Fields',
-                         2=>'Courses',
+                         2=>'Courses / 课程',
                         'schoolsetup/Courses.php'=>'Course Manager',
                         'schoolsetup/CourseCatalog.php'=>'Course Catalog',
                         // 'schoolsetup/PrintCatalog.php'=>'Print Catalog by Term', 
@@ -48,7 +48,7 @@ $menu['schoolsetup']['admin'] = array(
                         // 'schoolsetup/PrintAllCourses.php'=>'Print all Courses',
                         // 'schoolsetup/TeacherReassignment.php'=>'Teacher Re-Assignment',
 
-                         3=>'Reports',
+                         3=>'Reports / 报表',
                         'schoolsetup/PrintCatalog.php'=>'Course by Term', 
                         'schoolsetup/PrintCatalogGradeLevel.php'=>'Course by Grade Level' 
               );

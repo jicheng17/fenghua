@@ -62,7 +62,7 @@ if($_REQUEST['modfunc']=='save')
 				
 				{
 				echo "<table width=100%  style=\" font-family:Arial; font-size:12px;\" >";
-			echo "<tr><td width=105>".DrawLogo()."</td><td  style=\"font-size:15px; font-weight:bold; padding-top:20px;\">". GetSchool(UserSchool())."<div style=\"font-size:12px;\">Student Class Pictures</div></td><td align=right style=\"padding-top:20px;\">". ProperDate(DBDate()) ."<br />Powered by openSIS</td></tr><tr><td colspan=3 style=\"border-top:1px solid #333;\">&nbsp;</td></tr></table>";
+				echo "<tr><td  style=\"font-size:15px; font-weight:bold; padding-top:20px;\">". GetSchool(UserSchool())."<div style=\"font-size:12px;\">Student Class Pictures</div></td><td align=right style=\"padding-top:20px;\">". ProperDate(DBDate()) ."</td></tr><tr><td colspan=3 style=\"border-top:1px solid #333;\">&nbsp;</td></tr></table>";
 					echo '<TABLE border=1 style=border-collapse:collapse>';
 					echo '<TR><TD colspan=5 align=center  style=font-size:15px; font-weight:bold;>'.UserSyear().'-'.(UserSyear()+1).' - '.$course_period['TITLE'].'</TD></TR>';
 					$i = 0;
@@ -132,11 +132,11 @@ if(!$_REQUEST['modfunc'])
 		
 
 		$extra['extra_header_left'] = '<TABLE>';
-		$extra['extra_header_left'] .= '<TR><TD><INPUT type=checkbox name=include_teacher value=Y checked>Include Teacher</TD>';
-		$extra['extra_header_left'] .= '<TD><INPUT type=checkbox name=legal_size value=Y>Legal Size Paper</TD>';
-		$extra['extra_header_left'] .= '<TD><INPUT type=checkbox name=last_year value=Y>Use Last Year\'s if Missing</TD></TR>';
-		if(User('PROFILE')=='admin' || User('PROFILE')=='teacher')
-			$extra['extra_header_left'] .= '<TR><TD><INPUT type=checkbox name=include_inactive value=Y>Include Inactive Students</TD></TR>';
+		$extra['extra_header_left'] .= '<TR><TD><INPUT type=checkbox name=include_teacher value=Y>Include Teacher</TD>';
+		// $extra['extra_header_left'] .= '<TD><INPUT type=checkbox name=legal_size value=Y>Legal Size Paper</TD>';
+		// $extra['extra_header_left'] .= '<TD><INPUT type=checkbox name=last_year value=Y>Use Last Year\'s if Missing</TD></TR>';
+		// if(User('PROFILE')=='admin' || User('PROFILE')=='teacher')
+		// 	$extra['extra_header_left'] .= '<TR><TD><INPUT type=checkbox name=include_inactive value=Y>Include Inactive Students</TD></TR>';
 		$extra['extra_header_left'] .= '</TABLE>';
 	}
 

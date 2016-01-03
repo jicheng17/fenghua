@@ -74,6 +74,7 @@ if($_REQUEST['search_modfunc']=='search_fnc' || !$_REQUEST['search_modfunc'])
 			Search('general_info');
 			if($extra['search'])
 				echo $extra['search'];
+			
 			Search('student_fields');
 			
 			
@@ -134,7 +135,7 @@ if($_REQUEST['search_modfunc']=='search_fnc' || !$_REQUEST['search_modfunc'])
 			// 	echo '<INPUT type=checkbox name=address_group value=Y'.(Preferences('DEFAULT_FAMILIES')=='Y'?' CHECKED':'').'>Group by Family<BR>';
 			// 	echo '<INPUT type=checkbox name=_search_all_schools value=Y'.(Preferences('DEFAULT_ALL_SCHOOLS')=='Y'?' CHECKED':'').'>Search All Schools<BR>';
 			// }
-                        if($_REQUEST['modname']!='students/StudentReenroll.php')
+            if($_REQUEST['modname']!='students/StudentReenroll.php')
 			echo '<INPUT type=checkbox name=include_inactive value=Y checked>Include Inactive Students<BR>';
 			echo '<BR>';
 			

@@ -74,7 +74,7 @@ if(CONFIG_INC==0)
         'students'=>true,
         'users'=>true,
         'scheduling'=>true,
-        'grades'=>true,
+        'grades'=>false,
         'attendance'=>true,
         'eligibility'=>true,
         'Discipline'=>true,
@@ -82,7 +82,7 @@ if(CONFIG_INC==0)
         'EasyCom' =>true,
         'Library' =>true,
         'messaging'=>true,
-        'tools'=>true,
+        'tools'=>false,
     );
 
     // If session isn't started, start it.

@@ -56,9 +56,9 @@ if(User('PROFILE')=='admin')
                     if($value['ID']=='2')
                         $t=$value['ID'];
                 }
-                $options['admin']='Administrator w/Custom';
-                $options['teacher']='Teacher w/Custom';
-                $options['none']='No Access';
+                // $options['admin']='Administrator w/Custom';
+                // $options['teacher']='Teacher w/Custom';
+                // $options['none']='No Access';
                 
 
                         if($extra['profile'])
@@ -76,7 +76,7 @@ if(User('PROFILE')=='admin')
                         $options['teacher']='Teacher w/Custom';   
                         
                         }
-			else
+						else
                         $options = array($extra['profile']=>$options[$extra['profile']]);
                         
                         }
@@ -89,8 +89,8 @@ if(User('PROFILE')=='admin')
 			echo $extra['search'];
 		echo '<TR><TD colspan=2 align=center>';
 
-		if(User('PROFILE')=='admin')
-			echo '<INPUT type=checkbox name=_search_all_schools value=Y'.(Preferences('DEFAULT_ALL_SCHOOLS')=='Y'?' CHECKED':'').'>Search All Schools<BR>';
+		// if(User('PROFILE')=='admin')
+		// 	echo '<INPUT type=checkbox name=_search_all_schools value=Y'.(Preferences('DEFAULT_ALL_SCHOOLS')=='Y'?' CHECKED':'').'>Search All Schools<BR>';
 			echo '<INPUT type=checkbox name=_dis_user value=Y>Include Disabled Staff<BR><br>';
 		
 		echo "<INPUT type=SUBMIT class=btn_medium value='Submit' onclick='formload_ajax(\"search\");'>&nbsp<INPUT type=RESET class=btn_medium value='Reset'>";

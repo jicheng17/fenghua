@@ -1362,7 +1362,7 @@ if($_REQUEST['modfunc']=='update' && AllowEdit())
             }
             $sql .= '(' . substr($fields,0,-1) . ') values(' . substr($values,0,-1) . ')';
 			
-		$log_sql .= '(' . substr($log_fields,0,-1) . ') values(' . substr($log_values,0,-1) . ')';	
+		    $log_sql .= '(' . substr($log_fields,0,-1) . ') values(' . substr($log_values,0,-1) . ')';	
 			 $un = $_REQUEST['students']['USERNAME'];
                          $pass=md5($_REQUEST['students']['PASSWORD']);
                          
@@ -1481,9 +1481,9 @@ if($_REQUEST['modfunc']=='update' && AllowEdit())
     }
 
     if($_REQUEST['values'] && $_REQUEST['include']=='MedicalInc')
-      SaveData(array('student_medical_notes'=>"ID='__ID__'",'student_medical_alerts'=>"ID='__ID__'",'student_immunization'=>"ID='__ID__'",'student_medical_visits'=>"ID='__ID__'",'fields'=>array('student_medical_notes'=>'STUDENT_ID,','student_immunization'=>'STUDENT_ID,','student_medical_alerts'=>'STUDENT_ID,','student_medical_visits'=>'STUDENT_ID,'),'values'=>array('student_medical_notes'=>"'".UserStudentID()."',",'student_immunization'=>"'".UserStudentID()."',",'student_medical_alerts'=>"'".UserStudentID()."',",'student_medical_visits'=>"'".UserStudentID()."',")));
+        SaveData(array('student_medical_notes'=>"ID='__ID__'",'student_medical_alerts'=>"ID='__ID__'",'student_immunization'=>"ID='__ID__'",'student_medical_visits'=>"ID='__ID__'",'fields'=>array('student_medical_notes'=>'STUDENT_ID,','student_immunization'=>'STUDENT_ID,','student_medical_alerts'=>'STUDENT_ID,','student_medical_visits'=>'STUDENT_ID,'),'values'=>array('student_medical_notes'=>"'".UserStudentID()."',",'student_immunization'=>"'".UserStudentID()."',",'student_medical_alerts'=>"'".UserStudentID()."',",'student_medical_visits'=>"'".UserStudentID()."',")));
      if($_REQUEST['values'] && $_REQUEST['include']=='CommentsInc')
-    SaveData(array('student_mp_comments'=>"ID='__ID__'",'fields'=>array('student_mp_comments'=>'STUDENT_ID,SYEAR,MARKING_PERIOD_ID,STAFF_ID,'),'values'=>array('student_mp_comments'=>"'".UserStudentID()."','".UserSyear()."','".UserMP()."','".User('STAFF_ID')."',")));
+        SaveData(array('student_mp_comments'=>"ID='__ID__'",'fields'=>array('student_mp_comments'=>'STUDENT_ID,SYEAR,MARKING_PERIOD_ID,STAFF_ID,'),'values'=>array('student_mp_comments'=>"'".UserStudentID()."','".UserSyear()."','".UserMP()."','".User('STAFF_ID')."',")));
    
     if($_REQUEST['include']!='GeneralInfoInc' && $_REQUEST['include']!='AddressInc' && $_REQUEST['include']!='MedicalInc' &&  $_REQUEST['include']!='GoalInc' && $_REQUEST['include']!='OtherInfoInc'  && $_REQUEST['include']!='EnrollmentInfoInc' && $_REQUEST['include']!='FilesInc' )
     if(!strpos($_REQUEST['include'],'/'))

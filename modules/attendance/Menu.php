@@ -27,26 +27,29 @@
 #***************************************************************************************
 include('../../RedirectModulesInc.php');
 $menu['attendance']['admin'] = array(
-						'attendance/Administration.php'=>'Administration',
-						'attendance/AddAbsences.php'=>'Add Absences',
-						1=>'Reports',
-						'attendance/AttendanceData.php?list_by_day=true'=>'Attendance Report',
-						'attendance/Percent.php'=>'Average Daily Attendance',
-						'attendance/Percent.php?list_by_day=true'=>'Average Attendance by Day',
-						'attendance/DailySummary.php'=>'Attendance Chart',
-						'attendance/StudentSummary.php'=>'Absence Summary',
-						'attendance/TeacherCompletion.php'=>'Teacher Completion',
-						2=>'Utilities',
-						'attendance/FixDailyAttendance.php'=>'Recalculate Daily Attendance',
-						'attendance/DuplicateAttendance.php'=>'Delete Duplicate Attendance',
-						3=>'Setup',
-						'attendance/AttendanceCodes.php'=>'Attendance Codes'
+						'attendance/AttendanceData.php?list_by_day=true'=>'Attendance Report / 出勤报表',
+						'attendance/StudentSummary.php'=>'Absence Report / 缺席报表'
+
+						// 'attendance/Administration.php'=>'Administration',
+						// 'attendance/AddAbsences.php'=>'Add Absences',
+						// 1=>'Reports',
+						// 'attendance/AttendanceData.php?list_by_day=true'=>'Attendance Report',
+						// 'attendance/Percent.php'=>'Average Daily Attendance',
+						// 'attendance/Percent.php?list_by_day=true'=>'Average Attendance by Day',
+						// 'attendance/DailySummary.php'=>'Attendance Chart',
+						// 'attendance/StudentSummary.php'=>'Absence Summary',
+						// 'attendance/TeacherCompletion.php'=>'Teacher Completion',
+						// 2=>'Utilities',
+						// 'attendance/FixDailyAttendance.php'=>'Recalculate Daily Attendance',
+						// 'attendance/DuplicateAttendance.php'=>'Delete Duplicate Attendance',
+						// 3=>'Setup',
+						// 'attendance/AttendanceCodes.php'=>'Attendance Codes'
 					);
 
 $menu['attendance']['teacher'] = array(
 						'attendance/TakeAttendance.php'=>'Take Attendance',
-						'attendance/DailySummary.php'=>'Attendance Chart',
-						'attendance/StudentSummary.php'=>'Absence Summary'
+						//'attendance/DailySummary.php'=>'Attendance Chart',
+						'attendance/StudentSummary.php'=>'Absence Report'
 					);
 
 $menu['attendance']['parent'] = array(

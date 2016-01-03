@@ -756,9 +756,9 @@ if(!$_REQUEST['modfunc'])
 			echo '<TABLE width=100%><TR><TD>'; // open 3a
 			echo '<FIELDSET><LEGEND><FONT color=gray>Official Information</FONT></LEGEND><TABLE width=100%>';
                         if(User('PROFILE_ID')==0 && $prof_check[1]['PROFILE_ID']==0 && User('STAFF_ID')==UserStaffID())
-                        echo '<TR><td><span class=red>*</span>Category</td><td>:</td><TD style=\"white-space:nowrap\"><table cellspacing=0 cellpadding=0 cellspacing=0 cellpadding=0 border=0><tr><td>'.SelectInput($this_school['CATEGORY'],'values[SCHOOL][CATEGORY]','',array('Super Administrator'=>'Super Administrator','Administrator'=>'Administrator','Teacher'=>'Teacher','Non Teaching Staff'=>'Non Teaching Staff','Custodian'=>'Custodian','Principal'=>'Principal','Clerk'=>'Clerk'),false).'</td><td>';
+                        echo '<TR><td><span class=red>*</span>Category</td><td>:</td><TD style=\"white-space:nowrap\"><table cellspacing=0 cellpadding=0 cellspacing=0 cellpadding=0 border=0><tr><td>'.SelectInput($this_school['CATEGORY'],'values[SCHOOL][CATEGORY]','',array('Super Administrator'=>'Super Administrator','Administrator'=>'Administrator','Teacher'=>'Teacher'),false).'</td><td>';
                         else
-                        echo '<TR><td><span class=red>*</span>Category</td><td>:</td><TD style=\"white-space:nowrap\"><table cellspacing=0 cellpadding=0 cellspacing=0 cellpadding=0 border=0><tr><td>'.SelectInput($this_school['CATEGORY'],'values[SCHOOL][CATEGORY]','',array('Administrator'=>'Administrator','Teacher'=>'Teacher','Non Teaching Staff'=>'Non Teaching Staff','Custodian'=>'Custodian','Principal'=>'Principal','Clerk'=>'Clerk'),false).'</td><td>';
+                        echo '<TR><td><span class=red>*</span>Category</td><td>:</td><TD style=\"white-space:nowrap\"><table cellspacing=0 cellpadding=0 cellspacing=0 cellpadding=0 border=0><tr><td>'.SelectInput($this_school['CATEGORY'],'values[SCHOOL][CATEGORY]','',array('Administrator'=>'Administrator','Teacher'=>'Teacher'),false).'</td><td>';
 			echo '</td></tr></table></TD></tr>';
 			echo '<TR><td>Job Title</td><td>:</td><TD>'.TextInput($this_school['JOB_TITLE'],'values[SCHOOL][JOB_TITLE]','','class=cell_medium').'</TD></tr>';
 
@@ -773,7 +773,7 @@ if(!$_REQUEST['modfunc'])
 			echo'</TD></TR>';
 			echo '</TABLE>';
                         echo '<TABLE border=0 width=100%><TR><TD>';
-			echo '<FIELDSET><LEGEND><FONT color=gray>openSIS Access Information</FONT></LEGEND>';
+			echo '<FIELDSET><LEGEND><FONT color=gray>System Access Information</FONT></LEGEND>';
                          if($this_school_mod['USERNAME'] &&  (!$this_school['OPENSIS_ACCESS']=='Y'))
                              {
                                           echo '<table><TR><TD><input type="radio" id="noaccs" name="values[SCHOOL][OPENSIS_ACCESS]" value="N" onClick="hidediv();">&nbsp;No Access &nbsp;&nbsp; <input type="radio" id="r4" name="values[SCHOOL][OPENSIS_ACCESS]" value="Y" onClick="showdiv();" checked>&nbsp;Access</TD></TR></TABLE>';

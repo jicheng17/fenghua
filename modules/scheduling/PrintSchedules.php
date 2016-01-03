@@ -116,7 +116,7 @@ if($_REQUEST['modfunc']=='save')
 		foreach($RET as $student_id=>$courses)
 		{
 		echo "<table width=100%  style=\" font-family:Arial; font-size:12px;\" >";
-			echo "<tr><td width=105>".DrawLogo()."</td><td  style=\"font-size:15px; font-weight:bold; padding-top:20px;\">". GetSchool(UserSchool())."<div style=\"font-size:12px;\">Student Schedules Report</div></td><td align=right style=\"padding-top:20px;\">". ProperDate(DBDate()) ."<br />Powered by openSIS</td></tr><tr><td colspan=3 style=\"border-top:1px solid #333;\">&nbsp;</td></tr></table>";
+			echo "<tr><td  style=\"font-size:15px; font-weight:bold; padding-top:20px;\">". GetSchool(UserSchool())."<div style=\"font-size:12px;\">Student Schedules Report</div></td><td align=right style=\"padding-top:20px;\">". ProperDate(DBDate()) ."</td></tr><tr><td colspan=3 style=\"border-top:1px solid #333;\">&nbsp;</td></tr></table>";
 
                                     unset($_openSIS['DrawHeader']);
                                     echo '<br>';
@@ -164,14 +164,14 @@ if(!$_REQUEST['modfunc'])
 		echo "<FORM name=sch id=sch action=ForExport.php?modname=".strip_tags(trim($_REQUEST[modname]))."&head_html=Student+Schedules+Report&modfunc=save&include_inactive=$_REQUEST[include_inactive]&_openSIS_PDF=true method=POST target=_blank>";
 		
 		PopTable_wo_header ('header');
-		$extra['extra_header_left'] = '<TABLE>';
-		$extra['extra_header_left'] .= '<TR><TD align=right width=120>Marking Period</TD><TD>'.$mp_select.'</TD></TR>';
+		// $extra['extra_header_left'] = '<TABLE>';
+		// $extra['extra_header_left'] .= '<TR><TD align=right width=120>Marking Period</TD><TD>'.$mp_select.'</TD></TR>';
 
-                $extra['extra_header_left'] .= '<TR><TD align=right width=120>Include only courses active as of</TD><TD>'.DateInputAY('','include_active_date',1).'</TD></TR>';
-		Widgets('mailing_labels',true);
-		$extra['extra_header_left'] .= $extra['search'];
-		$extra['search'] = '';
-		$extra['extra_header_left'] .= '</TABLE>';
+  //               $extra['extra_header_left'] .= '<TR><TD align=right width=120>Include only courses active as of</TD><TD>'.DateInputAY('','include_active_date',1).'</TD></TR>';
+		// Widgets('mailing_labels',true);
+		// $extra['extra_header_left'] .= $extra['search'];
+		// $extra['search'] = '';
+		// $extra['extra_header_left'] .= '</TABLE>';
 	}
 
 	$extra['link'] = array('FULL_NAME'=>false);
@@ -182,8 +182,8 @@ if(!$_REQUEST['modfunc'])
 	$extra['new'] = true;
 	
 
-	Widgets('request');
-	Widgets('course');
+	//Widgets('request');
+	//Widgets('course');
 
 	Search('student_id',$extra);
 

@@ -51,7 +51,7 @@ Warehouse('header');
 	
 	echo "
 	<form name=loginform method='post' action='index.php'>
-	<table width='100%' height='100%' border='0' cellspacing='0' cellpadding='0'>
+	<table width='100%' height='100%' border='0' cellspacing='0' cellpadding='0' background='assets/bg.png'>
   <tr>
     <td valign='middle' height='100%'><table class='wrapper' border='0' cellspacing='0' cellpadding='0' align='center'>
         
@@ -138,7 +138,7 @@ Warehouse('header');
               </tr>
               <tr>
                 <td align='center' class='copyright'>
-                  Copyright 2016@Feng Hua Language Studies Centre/丰华语言学习中心
+                  Copyright@2016 Feng Hua Language Studies Centre/丰华语言学习中心. All rights reserved.
                 </td>
               </tr>
             </table></td>

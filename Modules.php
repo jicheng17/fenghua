@@ -1149,7 +1149,7 @@ echo "</div>";
 			<table width=\"100%\" border=\"0\">
   <tr>
     <td align='center' class='copyright'>
-       <center>Copyright 2016@Feng Hua Language Studies Centre/丰华语言学习中心</center></td>
+       <center>Copyright@2016 Feng Hua Language Studies Centre/丰华语言学习中心. All rights reserved.</center></td>
   </tr>
 </table>
 			</td>

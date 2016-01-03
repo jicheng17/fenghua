@@ -48,7 +48,7 @@ echo'</td></tr>';
 
 
 echo '<tr><td>Staff ID</td><td>:</td><td>'.NoInput($staff['STAFF_ID'],'').'</td></tr>';
-echo '<tr><td>Alternate ID</td><td>:</td><td>';
+echo '<tr><td>NRIC/Passport ID</td><td>:</td><td>';
 echo TextInput($staff['ALTERNATE_ID'],'staff[ALTERNATE_ID]','','size=12 maxlength=100 class=cell_floating ').'</td></tr>';
 $options = array('Dr.'=>'Dr.','Mr.'=>'Mr.','Ms.'=>'Ms.','Rev.'=>'Rev.','Miss.'=>'Miss.');
 
@@ -68,7 +68,7 @@ $language[$language_array['LANGUAGE_ID']]=$language_array['LANGUAGE_NAME'];
 }
 echo '<tr><td><span class=red></span>Primary Language</td><td>:</td><td>'.SelectInput($staff['PRIMARY_LANGUAGE_ID'],'staff[PRIMARY_LANGUAGE_ID]','',$language,'N/A','').'</td></tr>';
 echo '<tr><td>Second Language</td><td>:</td><td>'.SelectInput($staff['SECOND_LANGUAGE_ID'],'staff[SECOND_LANGUAGE_ID]','',$language,'N/A','').'</td></tr>';
-echo '<tr><td>Third Language</td><td>:</td><td>'.SelectInput($staff['THIRD_LANGUAGE_ID'],'staff[THIRD_LANGUAGE_ID]','',$language,'N/A','').'</td></tr>';
+//echo '<tr><td>Third Language</td><td>:</td><td>'.SelectInput($staff['THIRD_LANGUAGE_ID'],'staff[THIRD_LANGUAGE_ID]','',$language,'N/A','').'</td></tr>';
 if($_REQUEST['staff_id']=='new')
     $id_sent=0;
 else
@@ -84,7 +84,7 @@ else
 //echo '<tr><td>Email</td><td>:</td><td>'.TextInput($staff['EMAIL'],'staff[EMAIL]','','size=100 class=cell_medium maxlength=100 id=email_id onkeyup="check_email(this,'.$id_sent.',3);" onblur="check_email(this,'.$id_sent.',3);" ').'<div id=email_error></div></td></tr>';
 echo '<TR><td><span class=red>*</span>Email</td><td>:</td><td>'.TextInput($staff['EMAIL'],'staff[EMAIL]','','autocomplete=off id=email_id class=cell_medium onkeyup=check_email(this,'.$id_sent.',2); onblur=check_email(this,'.$id_sent.',2) ').'</td><td> <span id="email_error"></span></td></tr></tr>';
 
-echo '<tr><td>Physical Disability</td><td>:</td><td>'.SelectInput($staff['PHYSICAL_DISABILITY'],'staff[PHYSICAL_DISABILITY]','',array('N'=>'No','Y'=>'Yes'),false,'onchange=show_span("span_disability_desc",this.value)').'</td></tr>';
+//echo '<tr><td>Physical Disability</td><td>:</td><td>'.SelectInput($staff['PHYSICAL_DISABILITY'],'staff[PHYSICAL_DISABILITY]','',array('N'=>'No','Y'=>'Yes'),false,'onchange=show_span("span_disability_desc",this.value)').'</td></tr>';
 echo '</table>';
 if($staff['PHYSICAL_DISABILITY']=='Y'){
 echo '<table id="span_disability_desc"><tr><td style="width:120px">Disability Description</td><td>:</td><td>'.TextAreaInput($staff['DISABILITY_DESC'],'staff[DISABILITY_DESC]','', '', 'true').'</td></tr></table>';

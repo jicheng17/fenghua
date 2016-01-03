@@ -27,34 +27,34 @@
 #***************************************************************************************
 include('../../RedirectModulesInc.php');
 $menu['scheduling']['admin'] = array(
-						'scheduling/Schedule.php'=>'Student Schedule',
-                                                'scheduling/ViewSchedule.php'=>'ViewSchedule',
-						'scheduling/Requests.php'=>'Student Requests',
-						'scheduling/MassSchedule.php'=>'Group Schedule',
-						'scheduling/MassRequests.php'=>'Group Requests',
-						'scheduling/MassDrops.php'=>'Group Drops',
-						1=>'Reports',
-						'scheduling/PrintSchedules.php'=>'Print Schedules',
-						'scheduling/PrintClassLists.php'=>'Print Class Lists',
-						'scheduling/PrintClassPictures.php'=>'Print Class Pictures',
-						'scheduling/PrintRequests.php'=>'Print Requests',
-						'scheduling/ScheduleReport.php'=>'Schedule Report',
-						'scheduling/RequestsReport.php'=>'Requests Report',
-						'scheduling/UnfilledRequests.php'=>'Unfilled Requests',
-						'scheduling/IncompleteSchedules.php'=>'Incomplete Schedules',
-						'scheduling/AddDrop.php'=>'Add / Drop Report',
-						2=>'Setup',
+						'scheduling/Schedule.php'=>'Course Schedule / 选课',
+      //                   'scheduling/ViewSchedule.php'=>'View Schedule',
+						// 'scheduling/Requests.php'=>'Student Requests',
+						// 'scheduling/MassSchedule.php'=>'Group Schedule',
+						// 'scheduling/MassRequests.php'=>'Group Requests',
+						// 'scheduling/MassDrops.php'=>'Group Drops',
+						1=>'Reports / 报表',
+						'scheduling/PrintSchedules.php'=>'Schedules Report / 选课报表',
+						'scheduling/PrintClassLists.php'=>'Class Report / 班级报表',
+						// 'scheduling/PrintClassPictures.php'=>'Print Class Pictures',
+						// 'scheduling/PrintRequests.php'=>'Print Requests',
+						'scheduling/ScheduleReport.php'=>'Course Report / 报名统计'
+						// 'scheduling/RequestsReport.php'=>'Requests Report',
+						// 'scheduling/UnfilledRequests.php'=>'Unfilled Requests',
+						// 'scheduling/IncompleteSchedules.php'=>'Incomplete Schedules',
+						// 'scheduling/AddDrop.php'=>'Add / Drop Report',
+						// 2=>'Setup',
 						
-						'scheduling/Scheduler.php'=>'Run Scheduler'
+						// 'scheduling/Scheduler.php'=>'Run Scheduler'
 					);
 
 $menu['scheduling']['teacher'] = array(
-						'scheduling/Schedule.php'=>'Schedule',
-                                                'scheduling/ViewSchedule.php'=>'ViewSchedule',
-						1=>'Reports',
-						'scheduling/PrintSchedules.php'=>'Print Schedules',
-						'scheduling/PrintClassLists.php'=>'Print Class Lists',
-						'scheduling/PrintClassPictures.php'=>'Print Class Pictures'
+						'scheduling/Schedule.php'=>'Course Schedule / 选课',
+                        //'scheduling/ViewSchedule.php'=>'ViewSchedule',
+						1=>'Reports / 报表',
+						'scheduling/PrintSchedules.php'=>'Schedules Report / 选课报表',
+						'scheduling/PrintClassLists.php'=>'Class Report / 班级报表',
+						'scheduling/PrintClassPictures.php'=>'Class Pictures / 班级照片'
 					);
 
 $menu['scheduling']['parent'] = array(

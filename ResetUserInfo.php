@@ -616,7 +616,7 @@ if($_REQUEST['new_pass']!='' && $_REQUEST['ver_pass']!='')
               </tr>
               <tr>
                 <td align='center' class='copyright'>
-                    Copyright 2016@Feng Hua Language Studies Centre/丰华语言学习中心
+                    Copyright@2016 Feng Hua Language Studies Centre/丰华语言学习中心. All rights reserved.
                 </td>
               </tr>
             </table></td>
