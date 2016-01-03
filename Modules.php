@@ -812,7 +812,7 @@ echo "
 					
 echo "				<div class=\"page_heading_breadcrumb\"><label id='header' name='header'></label>&nbsp;</td><td>";
 
-echo '<div id="showhelp" style="padding-top:33px;"><a href="javascript:void(0);" onclick="inter=setInterval(\'ShowBox(helpdiv, 380, 499, 499, 211, showhelp)\',1);return false;"><b>Help</b></a></div></td></tr></table>';
+echo '<div id="showhelp" style="padding-top:33px;"><a href="javascript:void(0);" onclick="inter=setInterval(\'ShowBox(helpdiv, 380, 499, 499, 211, showhelp)\',1);return false;"><b></b></a></div></td></tr></table>';
 
 echo '
 	<div style="height:0px; margin-top:-6px; width=0px; position: absolute; overflow:hidden; visibility: hidden; text-align:left; " id="helpdiv">

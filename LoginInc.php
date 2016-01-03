@@ -54,7 +54,9 @@ Warehouse('header');
 	<table width='100%' height='100%' border='0' cellspacing='0' cellpadding='0' background='assets/bg.png'>
   <tr>
     <td valign='middle' height='100%'><table class='wrapper' border='0' cellspacing='0' cellpadding='0' align='center'>
-        
+        <!-- tr><td><img src='assets/login_logo.png' border='0' /></td></tr -->
+        <!-- tr><td>Feng Hua Language Studies Centre</td></tr -->
+        <!-- tr><td>丰华语言学习中心</td></tr -->
         <tr>
           <td class='header'><table width='100%' border='0' cellspacing='0' cellpadding='0' class='logo_padding'>
               <!--
@@ -115,11 +117,11 @@ Warehouse('header');
                 <?php
                 echo "<tr><td colspan=3>" ;
 		if($_REQUEST['reason'])
-		$note[] = 'You must have javascript enabled to use openSIS.';
+		$note[] = 'You must have javascript enabled.';
 		echo ErrorMessage($error,'Error');
 	        echo "</td></tr>";
                            echo "
-                  <tr><td></td><td colspan=2><a class='frgt_pw' href=ForgotPass.php>Forgot Username / Password?</a></td></tr>
+                  <!-- tr><td></td><td colspan=2><a class='frgt_pw' href=ForgotPass.php>Forgot Username / Password?</a></td></tr -->
 				  </table>
 				  </td>
                           </tr>

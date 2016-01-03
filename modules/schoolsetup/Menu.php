@@ -42,15 +42,17 @@ $menu['schoolsetup']['admin'] = array(
       //                   'schoolsetup/SchoolCustomFields.php'=>'School Custom Fields',
                          2=>'Courses / 课程',
                         'schoolsetup/Courses.php'=>'Course Manager',
-                        'schoolsetup/CourseCatalog.php'=>'Course Catalog',
+                        //'schoolsetup/CourseCatalog.php'=>'Course Catalog',
+                        'schoolsetup/PrintCatalog.php'=>'Course by Term', 
+                        'schoolsetup/PrintCatalogGradeLevel.php'=>'Course by Grade Level' 
                         // 'schoolsetup/PrintCatalog.php'=>'Print Catalog by Term', 
                         // 'schoolsetup/PrintCatalogGradeLevel.php'=>'Print Catalog by Grade Level', 
                         // 'schoolsetup/PrintAllCourses.php'=>'Print all Courses',
                         // 'schoolsetup/TeacherReassignment.php'=>'Teacher Re-Assignment',
 
-                         3=>'Reports / 报表',
-                        'schoolsetup/PrintCatalog.php'=>'Course by Term', 
-                        'schoolsetup/PrintCatalogGradeLevel.php'=>'Course by Grade Level' 
+                        //  3=>'Reports / 报表',
+                        // 'schoolsetup/PrintCatalog.php'=>'Course by Term', 
+                        // 'schoolsetup/PrintCatalogGradeLevel.php'=>'Course by Grade Level' 
               );
 
 $menu['schoolsetup']['teacher'] = array(
