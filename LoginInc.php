@@ -51,12 +51,13 @@ Warehouse('header');
 	
 	echo "
 	<form name=loginform method='post' action='index.php'>
-	<table width='100%' height='100%' border='0' cellspacing='0' cellpadding='0' background='assets/bg.png'>
+	<table width='100%' height='100%' border='0' cellspacing='0' cellpadding='0' background='assets/bg.png' style='background-repeat: no-repeat; background-size: 100% 100%;'>
   <tr>
     <td valign='middle' height='100%'><table class='wrapper' border='0' cellspacing='0' cellpadding='0' align='center'>
         <!-- tr><td><img src='assets/login_logo.png' border='0' /></td></tr -->
-        <!-- tr><td>Feng Hua Language Studies Centre</td></tr -->
-        <!-- tr><td>丰华语言学习中心</td></tr -->
+        <tr><td align='center' style = ''><font style ='font-size: 2.5em;     font-weight: bold;' color='red'>Feng Hua Language Studies Centre</font></td></tr>
+        <tr><td align='center' style = 'padding: 24px 0px 74px 0px;'><font style = 'font-size: 1.8em;font-weight: bold;' color='red'>丰华语言学习中心 </font></td></tr>
+        
         <tr>
           <td class='header'><table width='100%' border='0' cellspacing='0' cellpadding='0' class='logo_padding'>
               <!--

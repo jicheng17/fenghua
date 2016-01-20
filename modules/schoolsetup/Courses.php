@@ -1910,15 +1910,16 @@ if (!$_REQUEST['modfunc'] && !$_REQUEST['course_modfunc'] && !$_REQUEST['action'
         DrawHeaderHome($title, $delete_button . SubmitButton('Save', '', 'id=save_cp class=btn_medium onclick="return validate_course_period();"'));
 
         $header .= '<TABLE cellpadding=4 width=100%>';
+        $header .= '<TR><TD colspan=6><BR /><B>Basic / 基本设置</B></TD></TR>';
         $header .= '<TR>';
-        $header .= '<TD>' . TextInput($RET['SHORT_NAME'], 'tables[course_periods][' . $_REQUEST['course_period_id'] . '][SHORT_NAME]', 'Short Name', 'class=cell_floating',$div) . '</TD>';
+        $header .= '<TD>' . TextInput($RET['SHORT_NAME'], 'tables[course_periods][' . $_REQUEST['course_period_id'] . '][SHORT_NAME]', 'Short Name / 课程代码', 'class=cell_floating',$div) . '</TD>';
         echo '<input type="hidden" id="hidden_cp_id" value="'.$_REQUEST['course_period_id'].'">';
         $cal_RET = DBGet(DBQuery("SELECT TITLE,CALENDAR_ID FROM school_calendars WHERE SYEAR='" . UserSyear() . "' AND SCHOOL_ID='" . UserSchool() . "' ORDER BY DEFAULT_CALENDAR DESC"));
         $options = array();
         foreach ($cal_RET as $option)
             $options[$option['CALENDAR_ID']] = $option['TITLE'];
         if($_REQUEST[course_period_id]=='new')
-            $header .= '<TD>' . SelectInput($RET['CALENDAR_ID'], 'tables[course_periods][' . $_REQUEST['course_period_id'] . '][CALENDAR_ID]', 'Calendar', $options, 'N/A',' id=calendar_id onchange=reset_schedule();',$div) . '</TD>';
+            $header .= '<TD>' . SelectInput($RET['CALENDAR_ID'], 'tables[course_periods][' . $_REQUEST['course_period_id'] . '][CALENDAR_ID]', 'Calendar / 学期', $options, 'N/A',' id=calendar_id onchange=reset_schedule();',$div) . '</TD>';
         else
         {
             $cal_sql="SELECT TITLE FROM school_calendars WHERE SYEAR='" . UserSyear() . "' AND SCHOOL_ID='" . UserSchool() . "' AND CALENDAR_ID='".$RET['CALENDAR_ID']."'";
@@ -1949,14 +1950,14 @@ if (!$_REQUEST['modfunc'] && !$_REQUEST['course_modfunc'] && !$_REQUEST['action'
     }
 //       
         if($RET['AVAILABLE_SEATS']!=$RET['TOTAL_SEATS'])
-        $header .= '<TD>' . SelectInputDisabledMsg($RET['TEACHER_ID'], 'tables[course_periods][' . $_REQUEST['course_period_id'] . '][TEACHER_ID]', 'Primary Teacher', $teachers,'N/A','',$div,"To Change teacher go to School Setup->Courses->Teacher Re-Assignment") . '</TD>';
+        $header .= '<TD>' . SelectInputDisabledMsg($RET['TEACHER_ID'], 'tables[course_periods][' . $_REQUEST['course_period_id'] . '][TEACHER_ID]', 'Teacher / 任课教师', $teachers,'N/A','',$div,"Not allowed") . '</TD>';
         else
-        $header .= '<TD>' . SelectInput($RET['TEACHER_ID'], 'tables[course_periods][' . $_REQUEST['course_period_id'] . '][TEACHER_ID]', 'Primary Teacher', $teachers,'N/A','',$div) . '</TD>';    
+        $header .= '<TD>' . SelectInput($RET['TEACHER_ID'], 'tables[course_periods][' . $_REQUEST['course_period_id'] . '][TEACHER_ID]', 'Teacher / 任课教师', $teachers,'N/A','',$div) . '</TD>';    
         
         //$header .= '<TD>' . SelectInput($RET['SECONDARY_TEACHER_ID'], 'tables[course_periods][' . $_REQUEST['course_period_id'] . '][SECONDARY_TEACHER_ID]', 'Secondary Teacher', $teachers,'N/A','',$div) . '</TD>';
-        $header .= '<TD>' . TextInput($RET['TOTAL_SEATS'], 'tables[course_periods][' . $_REQUEST['course_period_id'] . '][TOTAL_SEATS]', 'Seats', 'size=4 class=cell_floating',$div) . '</TD>';
+        $header .= '<TD>' . TextInput($RET['TOTAL_SEATS'], 'tables[course_periods][' . $_REQUEST['course_period_id'] . '][TOTAL_SEATS]', 'Seats / 课程人数', 'size=4 class=cell_floating',$div) . '</TD>';
         if ($_REQUEST['course_period_id'] != 'new')
-            $header .= '<TD><FONT color=green>' . $RET['AVAILABLE_SEATS'] . '</FONT><BR><FONT color=gray><SMALL>Available Seats</SMALL></FONT></TD>';
+            $header .= '<TD><FONT color=green>' . $RET['AVAILABLE_SEATS'] . '</FONT><BR><FONT color=gray><SMALL>Available Seats / 空位</SMALL></FONT></TD>';
         else
             $header .= '<TD>&nbsp;</TD>';
         
@@ -1966,8 +1967,10 @@ if (!$_REQUEST['modfunc'] && !$_REQUEST['course_modfunc'] && !$_REQUEST['action'
         $options = array();
         foreach ($options_RET as $option)
             $options[$option['ID']] = $option['TITLE'];
-        //$header .= '<TD>' . SelectInput($RET['GRADE_SCALE_ID'], 'tables[course_periods][' . $_REQUEST['course_period_id'] . '][GRADE_SCALE_ID]', 'Grading Scale', $options, 'Not Graded','',$div) . '</TD>';
-        //$header .= '<TD valign=top>' . TextInput(sprintf('%0.3f', $RET['CREDITS']), 'tables[course_periods][' . $_REQUEST['course_period_id'] . '][CREDITS]', 'Credit Hours', 'size=4 class=cell_floating') . '</TD>';
+
+        $header .= '<TR><TD colspan=6><BR /><B>Finance / 费用</B></TD></TR>';        
+        $header .= '<TD>' . TextInput($RET['GRADE_SCALE_ID'], 'tables[course_periods][' . $_REQUEST['course_period_id'] . '][GRADE_SCALE_ID]', 'School Fee / 课程费用') . '</TD>';
+        $header .= '<TD valign=top>' . TextInput( $RET['CREDITS'], 'tables[course_periods][' . $_REQUEST['course_period_id'] . '][CREDITS]', 'Material Fee / 材料费用', 'size=4 class=cell_floating') . '</TD>';
         $header .= '<TD style="display:none" >' . SelectInput($RET['GENDER_RESTRICTION'], 'tables[course_periods][' . $_REQUEST['course_period_id'] . '][GENDER_RESTRICTION]', 'Gender Restriction', array('N' => 'None', 'M' => 'Male', 'F' => 'Female'), false,'',$div) . '</TD>';
          if ($_REQUEST['course_period_id'] != 'new' && $RET['PARENT_ID'] != $_REQUEST['course_period_id']) {
             $parent = DBGet(DBQuery("SELECT cp.TITLE as CP_TITLE,c.TITLE AS C_TITLE FROM course_periods cp,courses c WHERE c.COURSE_ID=cp.COURSE_ID AND cp.COURSE_PERIOD_ID='" . $RET['PARENT_ID'] . "'"));
@@ -2006,7 +2009,7 @@ if (!$_REQUEST['modfunc'] && !$_REQUEST['course_modfunc'] && !$_REQUEST['action'
             foreach ($mp_RET as $mp)
                 $options[$mp['MARKING_PERIOD_ID']] = $mp['SHORT_NAME'];
         } 
-        $header .= '<TR><TD colspan=6><BR /><B>Choose Term / 选择学期</B></TD></TR><TR><TD colspan=6><TABLE cellpadding=4 width="100%" style="border:1px dotted #999"><TR><TD colspan=2><TABLE height="60px"><TR><TD><input type=radio name=date_range value=mp id=preset onchange=mp_range_toggle(this);  '.($RET['MARKING_PERIOD_ID']?' checked':'').'></TD><TD><label for=preset id=select_mp style="display:'.($RET['MARKING_PERIOD_ID']?'none':'block').'">Marking Period</label><DIV id=mp_range style=float:left;display:'.($RET['MARKING_PERIOD_ID']?'block':'none').'>' . SelectInput($RET['MARKING_PERIOD_ID'], 'tables[course_periods][' . $_REQUEST['course_period_id'] . '][MARKING_PERIOD_ID]', 'Marking Period', $options,'N/A','id=marking_period',$div) . '</DIV></TD></TR></TABLE></TD>';
+        $header .= '<TR><TD colspan=6><BR /><B>Choose Term / 选择学期</B></TD></TR><TR><TD colspan=6><TABLE cellpadding=4 width="100%" style="border:1px dotted #999"><TR><TD colspan=2><TABLE height="60px"><TR><TD><input type=radio name=date_range value=mp id=preset onchange=mp_range_toggle(this);  '.($RET['MARKING_PERIOD_ID']?' checked':'').'></TD><TD><label for=preset id=select_mp style="display:'.($RET['MARKING_PERIOD_ID']?'none':'block').'"></label><DIV id=mp_range style=float:left;display:'.($RET['MARKING_PERIOD_ID']?'block':'none').'>' . SelectInput($RET['MARKING_PERIOD_ID'], 'tables[course_periods][' . $_REQUEST['course_period_id'] . '][MARKING_PERIOD_ID]', 'Marking Period', $options,'N/A','id=marking_period',$div) . '</DIV></TD></TR></TABLE></TD>';
 
           $header .= '<TD colspan=4 width="550px" style="display:none" ><TABLE><TR><TD ><input type=radio name=date_range value=dr id=custom onchange=mp_range_toggle(this); '.($RET['BEGIN_DATE']?' checked':'').'></TD><TD><label for=custom id=select_range style="display:'.($RET['BEGIN_DATE']?'none':'block').'">Custom Date Range</label><DIV id=date_range style=display:'.($RET['BEGIN_DATE']?'block':'none').'><TABLE><TR><TD>' . DateInputAY($RET['BEGIN_DATE'], 'begin', 1) . '</TD><TD> &nbsp; &nbsp; &nbsp; </TD><TD>  ' . DateInputAY($RET['END_DATE'], 'end', 2) . '</TD></TR></TABLE> </DIV></TD></TR></TABLE></TD></TR></TABLE></TD></TR>';
 		
@@ -2092,8 +2095,8 @@ if (!$_REQUEST['modfunc'] && !$_REQUEST['course_modfunc'] && !$_REQUEST['action'
                 echo '<input type="hidden" name="cp_id" id="'.$day.'_id" value="'.$course_period_id.'"/>';
                 $header .='<TD colspan=4><DIV id=meeting_days>';
                 $header .= '<TABLE  width=100%><TR>';
-                $header .='<TD>' . SelectInput($RET['ROOM_ID'], 'tables[course_period_var][' . $_REQUEST['course_period_id'] . '][ROOM_ID]', 'Class Room', $rooms,'N/A','id='.$day.'_room '.$disable,$div) . '</TD>';
-                $header .='<TD>' . SelectInput($RET['PERIOD_ID'], 'tables[course_period_var][' . $_REQUEST['course_period_id'] . '][PERIOD_ID]', 'Period', $periods, 'N/A','id='.$day.'_period class=cell_floating onClick="disable_hidden_field('.(($day!='')?2:1).');"'.$disable,$div) . '</TD>';
+                $header .='<TD>' . SelectInput($RET['ROOM_ID'], 'tables[course_period_var][' . $_REQUEST['course_period_id'] . '][ROOM_ID]', 'Class Room / 教室', $rooms,'N/A','id='.$day.'_room '.$disable,$div) . '</TD>';
+                $header .='<TD>' . SelectInput($RET['PERIOD_ID'], 'tables[course_period_var][' . $_REQUEST['course_period_id'] . '][PERIOD_ID]', 'Period / 课时', $periods, 'N/A','id='.$day.'_period class=cell_floating onClick="disable_hidden_field('.(($day!='')?2:1).');"'.$disable,$div) . '</TD>';
                 $header.='<input type=hidden id="'.$day.'_period" value="'.$RET['PERIOD_ID'].'" name=fixed_hidden>';
                 $header.='<input type=hidden id="fixed_tag_name" value="'.'tables[course_period_var][' . $_REQUEST['course_period_id'] . '][PERIOD_ID]'.'">';
                 $header .= '<TD>';
@@ -2110,9 +2113,9 @@ if (!$_REQUEST['modfunc'] && !$_REQUEST['course_modfunc'] && !$_REQUEST['action'
                 }
                 $header .= '</TR></TABLE>';
                 if($not_pass!=true)
-                    $header .= '","days",true);\'>' . $RET['DAYS'] . '</div></DIV><small><FONT color=' . Preferences('TITLES') . '>Meeting Days</FONT></small>';
+                    $header .= '","days",true);\'>' . $RET['DAYS'] . '</div></DIV><small><FONT color=' . Preferences('TITLES') . '>Meeting Days / 课时安排</FONT></small>';
                 $header .= '</TD>';
-                $header .= '<TD valign=top align="center">' . CheckboxInput($RET['DOES_ATTENDANCE'], 'tables[course_period_var][' . $_REQUEST['course_period_id'] . '][DOES_ATTENDANCE]', 'Takes attendance', $checked, $new, '<IMG SRC=assets/check.gif height=15 vspace=0 hspace=0 border=0>', '<IMG SRC=assets/x.gif height=15 vspace=0 hspace=0 border=0>', $div,' id='.$day.'_does_attendance onclick="formcheck_periods_attendance_F2('.(($day!='')?2:1).',this);"') . '<br><div id="ajax_output"></div></TD>';
+                $header .= '<TD valign=top align="center">' . CheckboxInput($RET['DOES_ATTENDANCE'], 'tables[course_period_var][' . $_REQUEST['course_period_id'] . '][DOES_ATTENDANCE]', 'Takes attendance / 考勤', $checked, $new, '<IMG SRC=assets/check.gif height=15 vspace=0 hspace=0 border=0>', '<IMG SRC=assets/x.gif height=15 vspace=0 hspace=0 border=0>', $div,' id='.$day.'_does_attendance onclick="formcheck_periods_attendance_F2('.(($day!='')?2:1).',this);"') . '<br><div id="ajax_output"></div></TD>';
                 $header .= '</TR></TABLE></TD>';
                 echo '<input type="hidden" name="fixed_day" id="fixed_day" value="'.$day.'" />';
                 

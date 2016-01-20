@@ -53,7 +53,7 @@ if(clean_param($_REQUEST['modfunc'],PARAM_ALPHAMOD)=='delete')
         }
         
      }
-    }
+}
 
 if(clean_param($_REQUEST['modfunc'],PARAM_ALPHAMOD)=='update')
 {
@@ -63,10 +63,8 @@ if(clean_param($_REQUEST['modfunc'],PARAM_ALPHAMOD)=='update')
 }
 if(!$_REQUEST['modfunc'])
 {
-	
-	   echo '<TABLE>';
-  
-        echo '</tr><TD valign=top>';
+       
+        
 	      $table = 'student_mp_comments';
 
         $functions = array('COMMENT'=>'_makeCommentsn');
@@ -80,6 +78,56 @@ if(!$_REQUEST['modfunc'])
         }
         $counter_for_date=$counter_for_date+1;
       #  else
+
+        $TOTAL_PAID = 0 ;
+        foreach($comments_RET as $comment){
+              //echo $comment['COMMENT'];
+              //jaycee
+              $TOTAL_PAID_TMP = $comment['COMMENT'];
+
+              //echo $TOTAL_PAID_TMP;
+
+              $TOTAL_PAID = $TOTAL_PAID + $TOTAL_PAID_TMP; 
+        }
+
+       //jaycee - financial info
+       $fee_RET = DBGet(DBQuery("SELECT p.grade_scale_id as school_fee, p.credits as material_fee FROM schedule s,course_periods p WHERE s.student_id='".UserStudentID()."' AND s.course_period_id=p.course_period_id "));
+       $reg_fee = 40;
+       $deposit_fee = 200;
+       $school_fee_total = 0 ;
+       $material_fee_total = 0 ;
+       if(count($fee_RET))
+        {
+             foreach($fee_RET as $fee)
+            {
+              //echo print_r($fee);
+              $school_fee_total = $school_fee_total +  $fee['SCHOOL_FEE'];
+              $material_fee_total = $material_fee_total +  $fee['MATERIAL_FEE'];
+            }
+        }
+        $TOTAL = $reg_fee + $deposit_fee + $school_fee_total + $material_fee_total;
+        
+       echo '<TABLE width="95%" >';
+       echo '<TR><td height="30px" colspan=2 class=hseparator><b>Financial Information</b></td></tr><tr><td colspan="2">';
+       echo '</TD></TR>';
+         echo '<tr><td colspan="2"><table width="50%">';         
+         echo '<tr><td>Registration Fee: </td> <td align="right">'.$reg_fee.' </td> <td>SGD</td></tr>';
+         echo '<tr><td>Deposit: </td> <td align="right">'.$deposit_fee.' </td> <td>SGD</td></tr>';
+         echo '<tr><td>School Fee:</td> <td align="right">'.$school_fee_total.' </td> <td>SGD</td></tr>';
+         echo '<tr><td>Material Fee: </td> <td align="right">'.$material_fee_total." </td> <td>SGD</td></tr>";
+         echo "<tr><td colspan=2 class=hseparator></td><td colspan=2 class=hseparator></td></tr>";
+         echo '<tr><td>TOTAL: </td> <td align="right">'.$TOTAL.' </td> <td>SGD</td></tr>'; 
+         //echo '<tr><td>TOTAL PAID: </td> <td align="right">'.$TOTAL_PAID.' </td> <td>SGD</td></tr>'; 
+         //echo '<tr><td>Remaining Amount: </td> <td align="right">'. ($TOTAL - $TOTAL_PAID).' </td> <td>SGD</td></tr>'; 
+         echo '</TABLE></td></tr>';
+        echo "<tr><td colspan=2 class=hseparator></td></tr>";
+        echo '<TABLE>';
+  
+        echo '</tr><TD valign=top>';
+        //end jaycee
+
+
+
    
 	   $columns = array('USER_NAME'=>'Entered By','COMMENT_DATE'=>'Date','COMMENT'=>'Amount (SGD)');
 	   $link['add']['html'] = array('COMMENT_DATE'=>_makeDate('','COMMENT_DATE',$counter_for_date),'COMMENT'=>_makeCommentsn('','COMMENT'),'USER_NAME'=>'');
