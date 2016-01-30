@@ -67,7 +67,7 @@ $menu['schoolsetup']['teacher'] = array(
 					);
 
 $menu['schoolsetup']['parent'] = array(
-						'schoolsetup/Schools.php'=>'School Information',
+						//'schoolsetup/Schools.php'=>'School Information',
 						'schoolsetup/Calendar.php'=>'Calendar'
 					);
 

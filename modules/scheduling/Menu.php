@@ -29,10 +29,11 @@ include('../../RedirectModulesInc.php');
 $menu['scheduling']['admin'] = array(
 						'scheduling/Schedule.php'=>'Course Schedule / 选课',
       //                   'scheduling/ViewSchedule.php'=>'View Schedule',
-						// 'scheduling/Requests.php'=>'Student Requests',
+						'scheduling/Requests.php'=>'Student Requests',
 						// 'scheduling/MassSchedule.php'=>'Group Schedule',
 						// 'scheduling/MassRequests.php'=>'Group Requests',
 						// 'scheduling/MassDrops.php'=>'Group Drops',
+						'scheduling/Scheduler.php'=>'Run Scheduler',
 						1=>'Reports / 报表',
 						'scheduling/PrintSchedules.php'=>'Schedules Report / 选课报表',
 						'scheduling/PrintClassLists.php'=>'Class Report / 班级报表',
@@ -45,7 +46,7 @@ $menu['scheduling']['admin'] = array(
 						// 'scheduling/AddDrop.php'=>'Add / Drop Report',
 						// 2=>'Setup',
 						
-						// 'scheduling/Scheduler.php'=>'Run Scheduler'
+						
 					);
 
 $menu['scheduling']['teacher'] = array(
@@ -58,7 +59,7 @@ $menu['scheduling']['teacher'] = array(
 					);
 
 $menu['scheduling']['parent'] = array(
-						'scheduling/ViewSchedule.php'=>'Schedule',
+						//'scheduling/ViewSchedule.php'=>'Schedule',
 						'scheduling/PrintClassPictures.php'=>'Class Pictures',
 						'scheduling/Requests.php'=>'Student Requests',
                         'scheduling/StudentScheduleReport.php'=>'Schedule Report'

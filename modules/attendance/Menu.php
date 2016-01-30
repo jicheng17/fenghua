@@ -52,10 +52,10 @@ $menu['attendance']['teacher'] = array(
 						'attendance/StudentSummary.php'=>'Absence Report'
 					);
 
-$menu['attendance']['parent'] = array(
-						'attendance/StudentSummary.php'=>'Absences',
-						'attendance/DailySummary.php'=>'Daily Summary'
-					);
+// $menu['attendance']['parent'] = array(
+// 						'attendance/StudentSummary.php'=>'Absences',
+// 						'attendance/DailySummary.php'=>'Daily Summary'
+// 					);
 
 $menu['users']['admin'] += array(
 						'users/TeacherPrograms.php?include=attendance/TakeAttendance.php'=>'Take Attendance',

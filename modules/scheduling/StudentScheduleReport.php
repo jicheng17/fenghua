@@ -89,7 +89,7 @@ if($_REQUEST['modfunc']=='save')
 		foreach($RET_stu as $student_id=>$courses)
 		{
 		echo "<table width=100%  style=\" font-family:Arial; font-size:12px;\" >";
-			echo "<tr><td width=105>".DrawLogo()."</td><td  style=\"font-size:15px; font-weight:bold; padding-top:20px;\">".GetSchool(UserSchool())."<div style=\"font-size:12px;\">Student Daily Schedule</div></td><td style=\"font-size:15px; font-weight:bold; padding-top:20px;\"> Schedule for: ". $row_mp_detail[1]['TITLE'] ." : ". cov_date($row_mp_detail[1]['START_DATE']). " - " . cov_date($row_mp_detail[1]['END_DATE']) ."</td><td align=right style=\"padding-top:20px;\">". ProperDate(DBDate()) ."<br />Powered by openSIS</td></tr><tr><td colspan=4 style=\"border-top:1px solid #333;\">&nbsp;</td></tr></table>";
+			echo "<tr><td  style=\"font-size:15px; font-weight:bold; padding-top:20px;\">".GetSchool(UserSchool())."<div style=\"font-size:12px;\">Student Daily Schedule</div></td><td style=\"font-size:15px; font-weight:bold; padding-top:20px;\"> Schedule for: ". $row_mp_detail[1]['TITLE'] ." : ". cov_date($row_mp_detail[1]['START_DATE']). " - " . cov_date($row_mp_detail[1]['END_DATE']) ."</td><td align=right style=\"padding-top:20px;\">". ProperDate(DBDate()) ."</td></tr><tr><td colspan=4 style=\"border-top:1px solid #333;\">&nbsp;</td></tr></table>";
 
 
 		# --------------------------------------- Start Change ------------------------------------------- #
@@ -124,7 +124,7 @@ if($_REQUEST['modfunc']=='save')
 					echo '<td bgcolor="#d3d3d3"><strong>Start Time</strong></td>';
 					echo '<td bgcolor="#d3d3d3"><strong>End Time</strong></td>';
 					echo '<td bgcolor="#d3d3d3"><strong>Period - Teacher</strong></td>';
-					echo '<td bgcolor="#d3d3d3"><strong>Marking Period</strong></td>';
+					echo '<td bgcolor="#d3d3d3"><strong>Term</strong></td>';
 					echo '<td bgcolor="#d3d3d3"><strong>Room/Location</strong></td>';
 					echo '</tr>';
 		$ar=array('Sunday'=>'U','Monday'=>'M','Tuesday'=>'T','Wednesday'=>'W','Thursday'=>'H','Friday'=>'F','Saturday'=>'S');

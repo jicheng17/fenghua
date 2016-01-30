@@ -29,12 +29,12 @@ include('../../RedirectModulesInc.php');
 $menu['tools']['admin'] = array(
 						
                                'tools/LogDetails.php'=>'Access Log',
-			       'tools/DeleteLog.php'=>'Delete Log',
+			                         //'tools/DeleteLog.php'=>'Delete Log',
                                'tools/Rollover.php'=>'Rollover',
-                               'tools/Backup.php'=>'Backup Database',
-                                1=>'Reports',  
-                               'tools/Reports.php?func=Basic'=>'At a Glance',
-                               'tools/Reports.php?func=Ins_r'=>'Institute Reports',
-                               'tools/Reports.php?func=Ins_cf'=>'Institute Custom Field Reports',                                
+                               'tools/Backup.php'=>'Backup Database'
+                               //  1=>'Reports',  
+                               // 'tools/Reports.php?func=Basic'=>'At a Glance',
+                               // 'tools/Reports.php?func=Ins_r'=>'Institute Reports',
+                               // 'tools/Reports.php?func=Ins_cf'=>'Institute Custom Field Reports',                                
     );
 ?>

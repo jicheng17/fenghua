@@ -28,7 +28,7 @@
 include('../../RedirectModulesInc.php');
 $menu['users']['admin'] = array(
 
-						//'users/Preferences.php'=>'Preferences',
+						// 'users/Preferences.php'=>'Preferences',
       //                                           1=>'Report',
       //                                           'users/UserAdvancedReport.php'=>'Advanced Report',
       //                                           2=>'Users',
@@ -47,8 +47,8 @@ $menu['users']['admin'] = array(
 					);
 
 $menu['users']['teacher'] = array(
-						'users/Staff.php'=>'Staff Info'
-						// 'users/Preferences.php'=>'Preferences'
+						'users/Staff.php'=>'Staff Info',
+						 //'users/Preferences.php'=>'Preferences'
 					);
 
 $menu['users']['parent'] = array(

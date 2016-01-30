@@ -82,7 +82,7 @@ if(CONFIG_INC==0)
         'EasyCom' =>true,
         'Library' =>true,
         'messaging'=>true,
-        'tools'=>false,
+        'tools'=>true,
     );
 
     // If session isn't started, start it.

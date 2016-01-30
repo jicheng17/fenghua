@@ -116,7 +116,7 @@ function ExportLink($modname,$title='',$options='')
 
 function getCSS()
 {
-		$css='Blue';
+		$css='Gray';
 		if(User('STAFF_ID'))
 		{
 		$sql = 'select value from program_user_config where title=\'THEME\' and user_id='.User('STAFF_ID');

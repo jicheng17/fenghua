@@ -91,9 +91,17 @@ if(!$_REQUEST['modfunc'])
         }
 
        //jaycee - financial info
+       $student_RET = DBGet(DBQuery("SELECT s.estimated_grad_date, s.name_suffix FROM students s WHERE s.student_id='".UserStudentID()."' "));
+       //echo print_r($student_RET);
+       $reg_fee = $student_RET[1]["ESTIMATED_GRAD_DATE"];
+       $deposit_fee = $student_RET[1]["NAME_SUFFIX"];
+
+
        $fee_RET = DBGet(DBQuery("SELECT p.grade_scale_id as school_fee, p.credits as material_fee FROM schedule s,course_periods p WHERE s.student_id='".UserStudentID()."' AND s.course_period_id=p.course_period_id "));
-       $reg_fee = 40;
-       $deposit_fee = 200;
+        //echo "here";
+        //print_r($fee_RET);
+
+       
        $school_fee_total = 0 ;
        $material_fee_total = 0 ;
        if(count($fee_RET))
@@ -113,10 +121,10 @@ if(!$_REQUEST['modfunc'])
          echo '<tr><td colspan="2"><table width="50%">';         
          echo '<tr><td>Registration Fee: </td> <td align="right">'.$reg_fee.' </td> <td>SGD</td></tr>';
          echo '<tr><td>Deposit: </td> <td align="right">'.$deposit_fee.' </td> <td>SGD</td></tr>';
-         echo '<tr><td>School Fee:</td> <td align="right">'.$school_fee_total.' </td> <td>SGD</td></tr>';
-         echo '<tr><td>Material Fee: </td> <td align="right">'.$material_fee_total." </td> <td>SGD</td></tr>";
+         echo '<tr><td>School Fee:</td> <td align="right">'.number_format((float)$school_fee_total, 2, '.', '').' </td> <td>SGD</td></tr>';
+         echo '<tr><td>Material Fee: </td> <td align="right">'.number_format((float)$material_fee_total, 2, '.', '')." </td> <td>SGD</td></tr>";
          echo "<tr><td colspan=2 class=hseparator></td><td colspan=2 class=hseparator></td></tr>";
-         echo '<tr><td>TOTAL: </td> <td align="right">'.$TOTAL.' </td> <td>SGD</td></tr>'; 
+         echo '<tr><td>TOTAL: </td> <td align="right">'.number_format((float)$TOTAL, 2, '.', '').' </td> <td>SGD</td></tr>'; 
          //echo '<tr><td>TOTAL PAID: </td> <td align="right">'.$TOTAL_PAID.' </td> <td>SGD</td></tr>'; 
          //echo '<tr><td>Remaining Amount: </td> <td align="right">'. ($TOTAL - $TOTAL_PAID).' </td> <td>SGD</td></tr>'; 
          echo '</TABLE></td></tr>';
