@@ -64,7 +64,7 @@ echo '<tr><td>Gender</td><td>:</td><td>'.SelectInput($student['GENDER'],'student
 echo '<tr><td>Ethnicity</td><td>:</td><td>'.SelectInput($student['ETHNICITY'],'students[ETHNICITY]','',$ethnic_option,'N/A','').'</td></tr>';
 echo '<input type=hidden id=current_date value='.date('Y-m-d').'>';
 echo '<tr><td>Date of Birth<font color="red">*</font></td><td>:</td><td>'.DateInputAY($student['BIRTHDATE'],'students[BIRTHDATE]','2').'</td></tr>';
-echo '<tr><td>Primary Language</td><td>:</td><td>'.SelectInput($student['LANGUAGE'],'students[LANGUAGE]','',$language_option,'N/A','').'</td></tr>';
+//echo '<tr><td>Primary Language</td><td>:</td><td>'.SelectInput($student['LANGUAGE'],'students[LANGUAGE]','',$language_option,'N/A','').'</td></tr>';
 
 if($_REQUEST['student_id']=='new')
     $id_sent=0;
@@ -72,6 +72,7 @@ else
     $id_sent=  UserStudentID();
 echo '<tr><td>Email</td><td>:</td><td>'.TextInput($student['EMAIL'],'students[EMAIL]','','size=100 class=cell_medium maxlength=100 onkeyup=check_email(this,'.$id_sent.',3); onblur=check_email(this,'.$id_sent.',3)').'<div id=email_error></div></td></tr>';
 echo '<tr><td>Phone</td><td>:</td><td>'.TextInput($student['PHONE'],'students[PHONE]','','size=100 class=cell_medium maxlength=100').'</td></tr>';
+echo '<tr><td>Studying at</td><td>:</td><td>'.TextInput($student['LANGUAGE'],'students[LANGUAGE]','','size=100 class=cell_medium maxlength=100').'</td></tr>';
 
 echo '<TR><td height="30px" colspan=2 class=hseparator><b>Fees</b></td></tr><tr><td colspan="2">';
 echo '<tr><td>Registration Fee </td><td>:</td><td>'.TextInput($student['ESTIMATED_GRAD_DATE'],'students[ESTIMATED_GRAD_DATE]','','size=100 class=cell_medium maxlength=100').'</td></tr>';

@@ -29,7 +29,7 @@ include('../../RedirectModulesInc.php');
 $menu['students']['admin'] = array(
 						'students/Student.php'=>'Student Info / 学生信息',
 						'students/Student.php&include=GeneralInfoInc&student_id=new'=>'Add a Student / 添加学生',
-						'students/Upload.php'=>'Upload Student Photo'
+						'students/Upload.php'=>'Upload Student Photo',
 
 						//'students/AssignOtherInfo.php'=>'Group Assign Student Info',
 						//'students/StudentReenroll.php'=>'Student Re Enroll',
@@ -48,7 +48,7 @@ $menu['students']['admin'] = array(
 						// 'students/StudentFields.php'=>'Student Fields',
 						// 'students/EnrollmentCodes.php'=>'Enrollment Codes',
 						// 'students/Upload.php'=>'Upload Student Photo',
-						// 'students/Upload.php?modfunc=edit'=>'Update Student Photo'
+						'students/Upload.php?modfunc=edit'=>'Update Student Photo'
 					);
 
 $menu['students']['teacher'] = array(

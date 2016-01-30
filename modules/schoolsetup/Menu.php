@@ -56,14 +56,16 @@ $menu['schoolsetup']['admin'] = array(
               );
 
 $menu['schoolsetup']['teacher'] = array(
-						'schoolsetup/Schools.php'=>'School Information',
-						'schoolsetup/MarkingPeriods.php'=>'Marking Periods',
-						'schoolsetup/Calendar.php'=>'Calendar',
-						1=>'Courses',
-                        'schoolsetup/Courses.php'=>'Course Manager',
-                        'schoolsetup/CourseCatalog.php'=>'Course Catalog',
-                        'schoolsetup/PrintCatalog.php'=>'Print Catalog by Term', 
-                        'schoolsetup/PrintAllCourses.php'=>'Print all Courses'
+						//'schoolsetup/Schools.php'=>'School Information',
+						//'schoolsetup/MarkingPeriods.php'=>'Marking Periods',
+						'schoolsetup/Calendar.php'=>'Calendars / 日历',
+
+						1=>'Courses / 课程',
+              'schoolsetup/PrintCatalog.php'=>'Course by Term'
+      //                   'schoolsetup/Courses.php'=>'Course Manager',
+      //                   'schoolsetup/CourseCatalog.php'=>'Course Catalog',
+      //                   'schoolsetup/PrintCatalog.php'=>'Print Catalog by Term', 
+      //                   'schoolsetup/PrintAllCourses.php'=>'Print all Courses'
 					);
 
 $menu['schoolsetup']['parent'] = array(
