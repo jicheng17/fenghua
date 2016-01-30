@@ -28,7 +28,7 @@
 include('../../RedirectModulesInc.php');
 $menu['schoolsetup']['admin'] = array(
 						'schoolsetup/PortalNotes.php'=>'Notices / 通知',
-						'schoolsetup/MarkingPeriods.php'=>'Periods / 学期',
+						'schoolsetup/MarkingPeriods.php'=>'Term / 学期',
 						'schoolsetup/Calendar.php'=>'Calendars / 日历',
 						'schoolsetup/Periods.php'=>'Periods / 课时',
 						'schoolsetup/GradeLevels.php'=>'Grade Levels / 年级',
