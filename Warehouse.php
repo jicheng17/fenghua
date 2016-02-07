@@ -74,6 +74,7 @@ if(WAREHOUSE_PHP==0)
 		{
 			case 'header':
 				echo "<html><head>";
+				echo "<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>";
 				echo "<title>".Config('TITLE')."</title><link rel=\"shortcut icon\" href=\"favicon.ico\">";
 				
 				
