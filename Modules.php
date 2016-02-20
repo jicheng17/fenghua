@@ -193,124 +193,125 @@ if(!$RET)
     }	
 }
 	
+//jc
+//echo "<SELECT name=mp onChange='this.form.submit();'>";
+// if(count($RET))
+// {
+//     if(!UserMP())
+//             $_SESSION['UserMP'] = $RET[1]['MARKING_PERIOD_ID'];
 
-echo "<SELECT name=mp onChange='this.form.submit();'>";
-if(count($RET))
-{
-    if(!UserMP())
-            $_SESSION['UserMP'] = $RET[1]['MARKING_PERIOD_ID'];
+//     foreach($RET as $quarter)
+//     {
+//                     echo "<OPTION value=$quarter[MARKING_PERIOD_ID]".(UserMP()==$quarter['MARKING_PERIOD_ID']?' SELECTED':'').">".$quarter['TITLE']."</OPTION>";
 
-    foreach($RET as $quarter)
-    {
-                    echo "<OPTION value=$quarter[MARKING_PERIOD_ID]".(UserMP()==$quarter['MARKING_PERIOD_ID']?' SELECTED':'').">".$quarter['TITLE']."</OPTION>";
-
-    }
-}
-echo "</SELECT>";
+//     }
+// }
+// echo "</SELECT>";
 //Marking Period
 
 echo '</FORM></td></tr>';
 echo '</table>';
-echo '<table cellspacing=\"0\">';
-echo '<tr><td style="color:#fff;">Subject</td><td></td>
-          <td style="color:#fff">Course</td><td></td>
-		  <td style="color:#fff">Course Period</td></tr>';
+// echo '<table cellspacing=\"0\">';
+// // echo '<tr><td style="color:#fff;">Subject</td><td></td>
+// //           <td style="color:#fff">Course</td><td></td>
+// // 		  <td style="color:#fff">Course Period</td></tr>';
 
-echo "<tr><td><FORM name=head_frm id=head_frm action=Side.php?modfunc=update&btnn=$btn&nsc=$ns&act=subject method=POST><INPUT type=hidden name=modcat value='' id=modcat_input>";
+// echo "<tr><td><FORM name=head_frm id=head_frm action=Side.php?modfunc=update&btnn=$btn&nsc=$ns&act=subject method=POST><INPUT type=hidden name=modcat value='' id=modcat_input>";
 
-$sub = DBQuery("SELECT DISTINCT cs.TITLE, cs.SUBJECT_ID,cs.SCHOOL_ID FROM course_subjects as cs,course_details as cd WHERE cs.SUBJECT_ID=cd.SUBJECT_ID AND cd.SYEAR='".UserSyear()."' AND (cd.TEACHER_ID='".User('STAFF_ID')."' OR cd.SECONDARY_TEACHER_ID='".User('STAFF_ID')."') AND cs.SCHOOL_ID='".UserSchool()."' AND (cd.MARKING_PERIOD_ID IN (".GetAllMP($allMP,UserMP()).") OR (cd.MARKING_PERIOD_ID IS NULL AND cd.BEGIN_DATE<='".date('Y-m-d')."' AND cd.END_DATE>='".date('Y-m-d')."'))");
-$RET = DBGet($sub);
+// $sub = DBQuery("SELECT DISTINCT cs.TITLE, cs.SUBJECT_ID,cs.SCHOOL_ID FROM course_subjects as cs,course_details as cd WHERE cs.SUBJECT_ID=cd.SUBJECT_ID AND cd.SYEAR='".UserSyear()."' AND (cd.TEACHER_ID='".User('STAFF_ID')."' OR cd.SECONDARY_TEACHER_ID='".User('STAFF_ID')."') AND cs.SCHOOL_ID='".UserSchool()."' AND (cd.MARKING_PERIOD_ID IN (".GetAllMP($allMP,UserMP()).") OR (cd.MARKING_PERIOD_ID IS NULL AND cd.BEGIN_DATE<='".date('Y-m-d')."' AND cd.END_DATE>='".date('Y-m-d')."'))");
+// $RET = DBGet($sub);
 
-if(!UserSubject()){
-    $_SESSION['UserSubject']=$RET[1]['SUBJECT_ID'];
-}
-echo "<SELECT name=subject onChange='this.form.submit();'>";
-if(count($RET)>0)
-{
-foreach($RET as $subject){
-    echo "<OPTION id=$subject[SUBJECT_ID] value=$subject[SUBJECT_ID]".((UserSubject()==$subject['SUBJECT_ID'])?' SELECTED':'').">".$subject['TITLE']."</OPTION>";
-}
-}
-else
-{
-    echo '<OPTION value="">n/a</OPTION>';
-}
-echo "</SELECT>";
-//===================================================================================================		
-echo "</FORM></td><td></td>";
+// if(!UserSubject()){
+//     $_SESSION['UserSubject']=$RET[1]['SUBJECT_ID'];
+// }
+// echo "<SELECT name=subject onChange='this.form.submit();'>";
+// if(count($RET)>0)
+// {
+// foreach($RET as $subject){
+//     echo "<OPTION id=$subject[SUBJECT_ID] value=$subject[SUBJECT_ID]".((UserSubject()==$subject['SUBJECT_ID'])?' SELECTED':'').">".$subject['TITLE']."</OPTION>";
+// }
+// }
+// else
+// {
+//     echo '<OPTION value="">n/a</OPTION>';
+// }
+// echo "</SELECT>";
+// //===================================================================================================		
+// echo "</FORM></td><td></td>";
 
-echo "<td><FORM name=head_frm id=head_frm action=Side.php?modfunc=update&btnn=$btn&nsc=$ns&act=course method=POST><INPUT type=hidden name=modcat value='' id=modcat_input>";
-$course = DBQuery("SELECT DISTINCT cd.COURSE_TITLE, cd.COURSE_ID,cd.SUBJECT_ID,cd.SCHOOL_ID FROM course_details cd WHERE (cd.TEACHER_ID='".User('STAFF_ID')."' OR cd.SECONDARY_TEACHER_ID='".User('STAFF_ID')."') AND cd.SYEAR='".UserSyear()."' AND cd.SCHOOL_ID='".UserSchool()."' AND cd.SUBJECT_ID='".UserSubject()."' AND (cd.MARKING_PERIOD_ID IN (".GetAllMP($allMP,UserMP()).") OR (cd.MARKING_PERIOD_ID IS NULL AND cd.BEGIN_DATE<='".date('Y-m-d')."' AND cd.END_DATE>='".date('Y-m-d')."'))");					
-$RET = DBGet($course);
-if(!UserCourse()){
-    $_SESSION['UserCourse']=$RET[1]['COURSE_ID'];
-}
-echo "<SELECT name=course onChange='this.form.submit();'>";
-if(count($RET)>0)
-{
-foreach($RET as $course){
-    echo "<OPTION id=$course[COURSE_ID] value=$course[COURSE_ID]".((UserCourse()==$course['COURSE_ID'])?' SELECTED':'').">".$course['COURSE_TITLE']."</OPTION>";
-}
-$cpv_id = DBGet(DBQuery("SELECT cpv.ID FROM course_periods cp,course_period_var cpv WHERE cp.SYEAR='".UserSyear()."' AND cp.COURSE_PERIOD_ID=cpv.COURSE_PERIOD_ID AND cp.SCHOOL_ID='".UserSchool()."' AND cp.COURSE_ID='".UserCourse()."' AND (TEACHER_ID='".User('STAFF_ID')."' OR SECONDARY_TEACHER_ID='".User('STAFF_ID')."') AND (MARKING_PERIOD_ID IN (".GetAllMP($allMP,UserMP()).") OR (MARKING_PERIOD_ID IS NULL AND BEGIN_DATE<='".date('Y-m-d')."' AND END_DATE>='".date('Y-m-d')."')) LIMIT 0,1"));
-//$_SESSION['CpvId']=$cpv_id[1]['ID'];
-}
-else
-{
-    echo '<OPTION value="">n/a</OPTION>';
-}
-echo "</SELECT>";
-//===================================================================================================							     					     
-echo "</FORM></td><td></td>";
+// echo "<td><FORM name=head_frm id=head_frm action=Side.php?modfunc=update&btnn=$btn&nsc=$ns&act=course method=POST><INPUT type=hidden name=modcat value='' id=modcat_input>";
+// $course = DBQuery("SELECT DISTINCT cd.COURSE_TITLE, cd.COURSE_ID,cd.SUBJECT_ID,cd.SCHOOL_ID FROM course_details cd WHERE (cd.TEACHER_ID='".User('STAFF_ID')."' OR cd.SECONDARY_TEACHER_ID='".User('STAFF_ID')."') AND cd.SYEAR='".UserSyear()."' AND cd.SCHOOL_ID='".UserSchool()."' AND cd.SUBJECT_ID='".UserSubject()."' AND (cd.MARKING_PERIOD_ID IN (".GetAllMP($allMP,UserMP()).") OR (cd.MARKING_PERIOD_ID IS NULL AND cd.BEGIN_DATE<='".date('Y-m-d')."' AND cd.END_DATE>='".date('Y-m-d')."'))");					
+// $RET = DBGet($course);
+// if(!UserCourse()){
+//     $_SESSION['UserCourse']=$RET[1]['COURSE_ID'];
+// }
+// echo "<SELECT name=course onChange='this.form.submit();'>";
+// if(count($RET)>0)
+// {
+// foreach($RET as $course){
+//     echo "<OPTION id=$course[COURSE_ID] value=$course[COURSE_ID]".((UserCourse()==$course['COURSE_ID'])?' SELECTED':'').">".$course['COURSE_TITLE']."</OPTION>";
+// }
+// $cpv_id = DBGet(DBQuery("SELECT cpv.ID FROM course_periods cp,course_period_var cpv WHERE cp.SYEAR='".UserSyear()."' AND cp.COURSE_PERIOD_ID=cpv.COURSE_PERIOD_ID AND cp.SCHOOL_ID='".UserSchool()."' AND cp.COURSE_ID='".UserCourse()."' AND (TEACHER_ID='".User('STAFF_ID')."' OR SECONDARY_TEACHER_ID='".User('STAFF_ID')."') AND (MARKING_PERIOD_ID IN (".GetAllMP($allMP,UserMP()).") OR (MARKING_PERIOD_ID IS NULL AND BEGIN_DATE<='".date('Y-m-d')."' AND END_DATE>='".date('Y-m-d')."')) LIMIT 0,1"));
+// //$_SESSION['CpvId']=$cpv_id[1]['ID'];
+// }
+// else
+// {
+//     echo '<OPTION value="">n/a</OPTION>';
+// }
+// echo "</SELECT>";
+// //===================================================================================================							     					     
+// echo "</FORM></td><td></td>";
 
-echo "<td><FORM name=head_frm id=head_frm action=Side.php?modfunc=update&btnn=$btn&nsc=$ns&act=period method=POST><INPUT type=hidden name=modcat value='' id=modcat_input>";		
+// echo "<td><FORM name=head_frm id=head_frm action=Side.php?modfunc=update&btnn=$btn&nsc=$ns&act=period method=POST><INPUT type=hidden name=modcat value='' id=modcat_input>";		
 						
 
-$QI = DBQuery("SELECT cpv.ID,cp.COURSE_PERIOD_ID,cp.COURSE_ID,cp.TITLE,cp.SCHOOL_ID,cpv.PERIOD_ID FROM course_periods cp,course_period_var cpv WHERE cp.SYEAR='".UserSyear()."' AND cp.COURSE_PERIOD_ID=cpv.COURSE_PERIOD_ID AND cp.SCHOOL_ID='".UserSchool()."' AND cp.COURSE_ID='".UserCourse()."' AND (TEACHER_ID='".User('STAFF_ID')."' OR SECONDARY_TEACHER_ID='".User('STAFF_ID')."') AND (MARKING_PERIOD_ID IN (".GetAllMP($allMP,UserMP()).") OR (MARKING_PERIOD_ID IS NULL AND BEGIN_DATE<='".date('Y-m-d')."' AND END_DATE>='".date('Y-m-d')."')) group by (cp.COURSE_PERIOD_ID)");
-$RET = DBGet($QI);
+// $QI = DBQuery("SELECT cpv.ID,cp.COURSE_PERIOD_ID,cp.COURSE_ID,cp.TITLE,cp.SCHOOL_ID,cpv.PERIOD_ID FROM course_periods cp,course_period_var cpv WHERE cp.SYEAR='".UserSyear()."' AND cp.COURSE_PERIOD_ID=cpv.COURSE_PERIOD_ID AND cp.SCHOOL_ID='".UserSchool()."' AND cp.COURSE_ID='".UserCourse()."' AND (TEACHER_ID='".User('STAFF_ID')."' OR SECONDARY_TEACHER_ID='".User('STAFF_ID')."') AND (MARKING_PERIOD_ID IN (".GetAllMP($allMP,UserMP()).") OR (MARKING_PERIOD_ID IS NULL AND BEGIN_DATE<='".date('Y-m-d')."' AND END_DATE>='".date('Y-m-d')."')) group by (cp.COURSE_PERIOD_ID)");
+// $RET = DBGet($QI);
 
-$fy_id = DBGet(DBQuery("SELECT MARKING_PERIOD_ID FROM school_years WHERE SYEAR='".UserSyear()."' AND SCHOOL_ID='".UserSchool()."'"));
-$fy_id = $fy_id[1]['MARKING_PERIOD_ID'];
+// $fy_id = DBGet(DBQuery("SELECT MARKING_PERIOD_ID FROM school_years WHERE SYEAR='".UserSyear()."' AND SCHOOL_ID='".UserSchool()."'"));
+// $fy_id = $fy_id[1]['MARKING_PERIOD_ID'];
 
-if(!UserCoursePeriod()){
-    $_SESSION['UserCoursePeriod'] = $RET[1]['COURSE_PERIOD_ID'];
-}	
+// if(!UserCoursePeriod()){
+//     $_SESSION['UserCoursePeriod'] = $RET[1]['COURSE_PERIOD_ID'];
+// }	
 
-echo "<SELECT name=period onChange='this.form.submit();'>";
-if(count($RET)>0)
-{
-foreach($RET as $period)
-{
+// echo "<SELECT name=period onChange='this.form.submit();'>";
+// if(count($RET)>0)
+// {
+// foreach($RET as $period)
+// {
     
-    $period_det=DBGet(DBQuery('SELECT sp.TITLE as PERIOD_NAME,cpv.DAYS,cpv.COURSE_PERIOD_DATE FROM course_period_var cpv,school_periods sp WHERE cpv.ID='.$period['ID'].' AND cpv.PERIOD_ID=sp.PERIOD_ID'));
-    $period_det=$period_det[1];
-    $days_arr=array("Monday"=>'M',"Tuesday"=>'T',"Wednesday"=>'W',"Thursday"=>'H',"Friday"=>'F',"Saturday"=>'S',"Sunday"=>'U');
-    if($period_det['DAYS']=='')
-    {
-        $period_det['DAYS']=date('l',strtotime($period_det['COURSE_PERIOD_DATE']));
-        $period_det['DAYS']=$days_arr[$period_det['DAYS']];
-    }
+//     $period_det=DBGet(DBQuery('SELECT sp.TITLE as PERIOD_NAME,cpv.DAYS,cpv.COURSE_PERIOD_DATE FROM course_period_var cpv,school_periods sp WHERE cpv.ID='.$period['ID'].' AND cpv.PERIOD_ID=sp.PERIOD_ID'));
+//     $period_det=$period_det[1];
+//     $days_arr=array("Monday"=>'M',"Tuesday"=>'T',"Wednesday"=>'W',"Thursday"=>'H',"Friday"=>'F',"Saturday"=>'S',"Sunday"=>'U');
+//     if($period_det['DAYS']=='')
+//     {
+//         $period_det['DAYS']=date('l',strtotime($period_det['COURSE_PERIOD_DATE']));
+//         $period_det['DAYS']=$days_arr[$period_det['DAYS']];
+//     }
 
-////    echo "kk".$period['ID'];
-//    if(CpvId()==$period['ID'])
-//        echo "uuu";
-    echo "<OPTION id=$period[COURSE_PERIOD_ID] value=$period[ID]".((CpvId()==$period['ID'])?' SELECTED':'').">".$period['TITLE']." - ".$period_det['PERIOD_NAME']."</OPTION>";
-//     echo "<OPTION id=$period[COURSE_PERIOD_ID] value=$period[ID]".((CpvId()==$period['ID'])?' SELECTED':'').">".$period['TITLE']." - ".$period_det['PERIOD_NAME']." - ".$period_det['DAYS']."</OPTION>";
-    $_SESSION['UserPeriod'] = $period['PERIOD_ID'];
-    if(CpvId()==$period['ID'])
-    {
+// ////    echo "kk".$period['ID'];
+// //    if(CpvId()==$period['ID'])
+// //        echo "uuu";
+//     echo "<OPTION id=$period[COURSE_PERIOD_ID] value=$period[ID]".((CpvId()==$period['ID'])?' SELECTED':'').">".$period['TITLE']." - ".$period_det['PERIOD_NAME']."</OPTION>";
+// //     echo "<OPTION id=$period[COURSE_PERIOD_ID] value=$period[ID]".((CpvId()==$period['ID'])?' SELECTED':'').">".$period['TITLE']." - ".$period_det['PERIOD_NAME']." - ".$period_det['DAYS']."</OPTION>";
+//     $_SESSION['UserPeriod'] = $period['PERIOD_ID'];
+//     if(CpvId()==$period['ID'])
+//     {
         
-        $_SESSION['CpvId']=$period['ID'];
-        $_SESSION['UserCoursePeriod'] = $period['COURSE_PERIOD_ID'];
-    }
-}
-}
-else
-{
-    echo '<OPTION value="">n/a</OPTION>';
-}
-echo "</SELECT>";
-echo "</FORM></td>";
-echo '</tr></table></div>';
+//         $_SESSION['CpvId']=$period['ID'];
+//         $_SESSION['UserCoursePeriod'] = $period['COURSE_PERIOD_ID'];
+//     }
+// }
+// }
+// else
+// {
+//     echo '<OPTION value="">n/a</OPTION>';
+// }
+// echo "</SELECT>";
+// echo "</FORM></td>";
+// echo '</tr></table></div>';
+echo '</div>';
 echo "</td></tr></table></td></tr>";
 						
 }  ##################Only for Teacher End##################	
@@ -472,15 +473,16 @@ if(!$RET)
         $_SESSION['UserMP'] = GetCurrentMP('FY',DBDate());
 }
 	
-echo "<SELECT name=mp onChange='this.form.submit();'>";
-if(count($RET))
-{
-    if(!UserMP())
-        $_SESSION['UserMP'] = $RET[1]['MARKING_PERIOD_ID'];
-    foreach($RET as $quarter)
-        echo "<OPTION value=$quarter[MARKING_PERIOD_ID]".(UserMP()==$quarter['MARKING_PERIOD_ID']?' SELECTED':'').">".$quarter['TITLE']."</OPTION>";
-}
-echo "</SELECT>";
+ //jc   
+// echo "<SELECT name=mp onChange='this.form.submit();'>";
+// if(count($RET))
+// {
+//     if(!UserMP())
+//         $_SESSION['UserMP'] = $RET[1]['MARKING_PERIOD_ID'];
+//     foreach($RET as $quarter)
+//         echo "<OPTION value=$quarter[MARKING_PERIOD_ID]".(UserMP()==$quarter['MARKING_PERIOD_ID']?' SELECTED':'').">".$quarter['TITLE']."</OPTION>";
+// }
+// echo "</SELECT>";
 //Marking Period
 
 echo '</FORM></td></tr></table></div>';
@@ -593,7 +595,7 @@ echo "<tr>
 							  
 echo "<div id='submenu_1' style='display:none;'>
 
-<table cellspacing=0 celpadding=0 border=0 width=100%><tr><td width=60% valign=middle class='welcome'><b>Welcome to Feng Hua Management system(command)</b></td></tr></table> 
+<table cellspacing=0 celpadding=0 border=0 width=100%><tr><td width=60% valign=middle class='welcome'><b>Welcome to Feng Hua Management system</b></td></tr></table> 
 
 </div>"; 
 $i = 2;
