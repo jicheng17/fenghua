@@ -1141,7 +1141,7 @@ if(!$_REQUEST['modfunc'])
 	}
 
 	echo '<TD valign=top>';
-	$columns = array('TITLE'=>'Year');
+	$columns = array('TITLE'=>'YEAR');
 	$link = array();
 	$link['TITLE']['link'] = "#"." onclick='check_content(\"Ajax.php?modname=$_REQUEST[modname]&modfunc=$_REQUEST[modfunc]&mp_term=FY\");'";
 	$link['TITLE']['variables'] = array('marking_period_id'=>'MARKING_PERIOD_ID');
@@ -1174,7 +1174,7 @@ if(!$_REQUEST['modfunc'])
 		}
 
 		echo '<TD valign=top>';
-		$columns = array('TITLE'=>'Semester');
+		$columns = array('TITLE'=>'SEMESTER');
 		$link = array();
 		$link['TITLE']['link'] = "Modules.php?modname=$_REQUEST[modname]&modfunc=$_REQUEST[modfunc]&mp_term=SEM&year_id=$_REQUEST[year_id]";//." onclick='grabA(this); return false;'";
 		$link['TITLE']['variables'] = array('marking_period_id'=>'MARKING_PERIOD_ID');
@@ -1207,13 +1207,13 @@ if(!$_REQUEST['modfunc'])
 			}
 
 			echo '<TD valign=top>';
-			$columns = array('TITLE'=>'Quarter');
+			$columns = array('TITLE'=>'TERM');
 			$link = array();
 			$link['TITLE']['link'] = "Modules.php?modname=$_REQUEST[modname]&modfunc=$_REQUEST[modfunc]&mp_term=QTR&year_id=$_REQUEST[year_id]&semester_id=$_REQUEST[semester_id]";
 			$link['TITLE']['variables'] = array('marking_period_id'=>'MARKING_PERIOD_ID');
 			$link['add']['link'] = "Modules.php?modname=$_REQUEST[modname]&mp_term=QTR&marking_period_id=new&year_id=$_REQUEST[year_id]&semester_id=$_REQUEST[semester_id]";
 
-			ListOutput($qtr_RET,$columns,'Quarter','Quarters',$link,array(),$LO_options);
+			ListOutput($qtr_RET,$columns,'Term','Terms',$link,array(),$LO_options);
 			echo '</TD>';
 
 			// PROGRESS PERIODS
