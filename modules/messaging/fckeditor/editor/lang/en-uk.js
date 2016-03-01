@@ -406,7 +406,7 @@ IeSpellDownload			: "Spell checker not installed. Do you want to download it now
 DlgButtonText		: "Text (Value)",
 DlgButtonType		: "Type",
 DlgButtonTypeBtn	: "Button",
-DlgButtonTypeSbm	: "Submit",
+DlgButtonTypeSbm	: "Search",
 DlgButtonTypeRst	: "Reset",
 
 // Checkbox and Radio Button Dialogs
