@@ -72,9 +72,9 @@ if($_REQUEST['search_modfunc']=='search_fnc' || !$_REQUEST['search_modfunc'])
 			echo '<BR>';
 			
 			if($extra['pdf']!=true)
-			echo "<INPUT type=SUBMIT class=btn_medium value='Submit' >&nbsp<INPUT type=RESET class=btn_medium value='Reset'>";
+			echo "<INPUT type=SUBMIT class=btn_medium value='Search' >&nbsp<INPUT type=RESET class=btn_medium value='Reset'>";
 			else
-			echo "<INPUT type=SUBMIT class=btn_medium value='Submit'>&nbsp<INPUT type=RESET class=btn_medium value='Reset'>";
+			echo "<INPUT type=SUBMIT class=btn_medium value='Search'>&nbsp<INPUT type=RESET class=btn_medium value='Reset'>";
 			
 			echo '</TD></TR>';
 			echo '</TABLE>';

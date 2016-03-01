@@ -140,9 +140,9 @@ if($_REQUEST['search_modfunc']=='search_fnc' || !$_REQUEST['search_modfunc'])
 			echo '<BR>';
 			
 			if($extra['pdf']!=true)
-			echo "<INPUT type=SUBMIT class=btn_medium value='Submit' onclick='return formcheck_student_advnc_srch();formload_ajax(\"search\");'>&nbsp<INPUT type=RESET class=btn_medium value='Reset'>";
+			echo "<INPUT type=SUBMIT class=btn_medium value='Search' onclick='return formcheck_student_advnc_srch();formload_ajax(\"search\");'>&nbsp<INPUT type=RESET class=btn_medium value='Reset'>";
 			else
-			echo "<INPUT type=SUBMIT class=btn_medium value='Submit' onclick='return formcheck_student_advnc_srch();'>&nbsp<INPUT type=RESET class=btn_medium value='Reset'>";
+			echo "<INPUT type=SUBMIT class=btn_medium value='Search' onclick='return formcheck_student_advnc_srch();'>&nbsp<INPUT type=RESET class=btn_medium value='Reset'>";
 			
 			echo '</TD></TR>';
 			echo '</TABLE>';
@@ -222,7 +222,7 @@ if($_REQUEST['modname']=='grades/HonorRoll.php')
 
 			$students_RET = $extra['array_function']($students_RET);
 
-	$LO_columns = array('FULL_NAME'=>'Student','STUDENT_ID'=>'Student ID','ALT_ID'=>'Alternate ID','GRADE_ID'=>'Grade','PHONE'=>'Phone');
+	$LO_columns = array('FULL_NAME'=>'Student','STUDENT_ID'=>'Student ID','ALT_ID'=>'NRIC/Passport ID','GRADE_ID'=>'Grade','PHONE'=>'Phone');
 	$name_link['FULL_NAME']['link'] = "Modules.php?modname=$_REQUEST[next_modname]";
 	$name_link['FULL_NAME']['variables'] = array('student_id'=>'STUDENT_ID');
 	if($_REQUEST['_search_all_schools'])
