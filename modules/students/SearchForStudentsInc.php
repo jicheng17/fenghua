@@ -222,7 +222,7 @@ if($_REQUEST['modname']=='grades/HonorRoll.php')
 
 			$students_RET = $extra['array_function']($students_RET);
 
-	$LO_columns = array('FULL_NAME'=>'Student','STUDENT_ID'=>'Student ID','ALT_ID'=>'NRIC/Passport ID','GRADE_ID'=>'Grade','PHONE'=>'Phone');
+	$LO_columns = array('FULL_NAME'=>'Student','STUDENT_ID'=>'Student ID','ALT_ID'=>'NRIC/Passport ID','GRADE_ID'=>'Grade','PHONE'=>'Phone', 'FINANCE'=>'Finance');
 	$name_link['FULL_NAME']['link'] = "Modules.php?modname=$_REQUEST[next_modname]";
 	$name_link['FULL_NAME']['variables'] = array('student_id'=>'STUDENT_ID');
 	if($_REQUEST['_search_all_schools'])
@@ -269,11 +269,18 @@ if($_REQUEST['modname']=='grades/HonorRoll.php')
                             $extra['plural'] = 'Students';
 
                         foreach($students_RET as $si=>$sd)
-                        $_SESSION['students_order'][$si]=$sd['STUDENT_ID'];
-                            
+                        	$_SESSION['students_order'][$si]=$sd['STUDENT_ID'];
+
+                        //jc
+                        foreach($students_RET as $si=>$sd){
+                        	$sd['FINANCE'] = 'NOT PAID';
+                        	$students_RET[$si] = $sd;
+                        }
+                        //print_r($students_RET);
                         
 echo '<div style="overflow:auto; width:820px; overflow-x:scroll;">';
                         echo "<div id='students' >";
+                        //print_r($students_RET);
                         ListOutputExcel($students_RET,$columns,$extra['singular'],$extra['plural'],$link,$extra['LO_group'],$extra['options']);
                         echo "</div>";
                          echo "</div>";
