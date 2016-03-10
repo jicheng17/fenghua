@@ -311,7 +311,7 @@ if($_REQUEST['student_id']!='new')
 		$id = 'new';
         echo '<div style="overflow:auto; width:820px;">';
         echo '<div id="students" >';
-		ListOutput($RET,$columns,'Enrollment Record','Enrollment Records',$link);
+		ListOutput($RET,$columns,'Enrollment Record','Enrollment Records');
                  echo "</div>";
         echo "</div>";
 		if($id!='new')
