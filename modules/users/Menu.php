@@ -42,7 +42,7 @@ $menu['users']['admin'] = array(
       //                                           'users/StaffFields.php'=>'Staff Fields',
 //                                                'users/UploadUserPhoto.php'=>'Upload Staff\'s Photo',
 //						'users/UploadUserPhoto.php?modfunc=edit'=>'Update Staff\'s Photo',
-						5=>'Teacher Programs',
+						//5=>'Teacher Programs',
                                                 
 					);
 

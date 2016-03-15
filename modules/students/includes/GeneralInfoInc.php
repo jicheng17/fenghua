@@ -327,12 +327,22 @@ if($_REQUEST['student_id']!='new')
 echo '<tr><td>Last Login</td><td>:</td><td>';
 echo NoInput(ProperDate(substr($student['LAST_LOGIN'],0,10)).substr($student['LAST_LOGIN'],10),'');
 echo '</td></tr>';
-if(User('PROFILE')=='admin'){
-echo '<tr><td>Disable Student</td><td>:</td><td>';
-echo CheckboxInput($student['IS_DISABLE'],'students[IS_DISABLE]','','CHECKED',$new,'<IMG SRC=assets/check.gif width=15>','<IMG SRC=assets/x.gif width=15>');
-echo '</td></tr>';
-}
 }
 echo'</table>';
+
+//jc
+
+if(User('PROFILE')=='admin'){
+echo '<TABLE border=0>';
+echo '<TR><td height="30px" ><b>Manage Student</b></td></tr><tr><td colspan="2">';
+echo '<tr><td>Select to Delete Student</td><td>:</td><td>';
+echo CheckboxInput($student['IS_DISABLE'],'students[IS_DISABLE]','','CHECKED',$new,'<IMG SRC=assets/check.gif width=15>','<IMG SRC=assets/x.gif width=15>');
+
+echo '</td></tr>';
+echo '<tr><td>';
+echo "please only delete inactive student";
+echo '</td></tr>';
+echo'</table>';
+}
 echo '</td></TR>';
 ?>

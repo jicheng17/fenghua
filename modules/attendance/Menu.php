@@ -58,8 +58,8 @@ $menu['attendance']['teacher'] = array(
 // 					);
 
 $menu['users']['admin'] += array(
-						'users/TeacherPrograms.php?include=attendance/TakeAttendance.php'=>'Take Attendance',
-						'users/TeacherPrograms.php?include=attendance/MissingAttendance.php'=>'Missing Attendance'
+						// 'users/TeacherPrograms.php?include=attendance/TakeAttendance.php'=>'Take Attendance',
+						// 'users/TeacherPrograms.php?include=attendance/MissingAttendance.php'=>'Missing Attendance'
 					);
 
 $exceptions['attendance'] = array(
