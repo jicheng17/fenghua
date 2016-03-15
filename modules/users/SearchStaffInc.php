@@ -91,7 +91,7 @@ if(User('PROFILE')=='admin')
 
 		// if(User('PROFILE')=='admin')
 		// 	echo '<INPUT type=checkbox name=_search_all_schools value=Y'.(Preferences('DEFAULT_ALL_SCHOOLS')=='Y'?' CHECKED':'').'>Search All Schools<BR>';
-			echo '<INPUT type=checkbox name=_dis_user value=Y>Include Disabled Staff<BR><br>';
+		echo '<INPUT type=checkbox name=_dis_user value=Y checked>Include Disabled Staff<BR><br>';
 		
 		echo "<INPUT type=SUBMIT class=btn_medium value='Search' onclick='formload_ajax(\"search\");'>&nbsp<INPUT type=RESET class=btn_medium value='Reset'>";
 		echo '</TD></TR>';
