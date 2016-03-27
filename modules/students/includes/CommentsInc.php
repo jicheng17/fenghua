@@ -69,7 +69,9 @@ if(!$_REQUEST['modfunc'])
 
         $functions = array('COMMENT'=>'_makeCommentsn');
         if(User('PROFILE')=='admin' || User('PROFILE')=='teacher'|| User('PROFILE')=='parent' || User('PROFILE')=='student')
-	      $comments_RET = DBGet(DBQuery("SELECT ID,COMMENT_DATE,COMMENT,CONCAT(s.FIRST_NAME,' ',s.LAST_NAME)AS USER_NAME,student_mp_comments.STAFF_ID FROM student_mp_comments,staff s WHERE STUDENT_ID='".UserStudentID()."'  AND s.STAFF_ID=student_mp_comments.STAFF_ID ORDER BY ID DESC"),$functions);
+	      //$comments_RET = DBGet(DBQuery("SELECT ID,COMMENT_DATE,COMMENT,CONCAT(s.FIRST_NAME,' ',s.LAST_NAME)AS USER_NAME,student_mp_comments.STAFF_ID FROM student_mp_comments,staff s WHERE STUDENT_ID='".UserStudentID()."'  AND s.STAFF_ID=student_mp_comments.STAFF_ID ORDER BY ID DESC"),$functions);
+        //jaycee remove functions
+        $comments_RET = DBGet(DBQuery("SELECT ID,COMMENT_DATE,COMMENT,CONCAT(s.FIRST_NAME,' ',s.LAST_NAME)AS USER_NAME,student_mp_comments.STAFF_ID FROM student_mp_comments,staff s WHERE STUDENT_ID='".UserStudentID()."'  AND s.STAFF_ID=student_mp_comments.STAFF_ID ORDER BY ID DESC"));      
         $counter_for_date=0;
         foreach($comments_RET as $mi=>$md)
         {
@@ -78,17 +80,6 @@ if(!$_REQUEST['modfunc'])
         }
         $counter_for_date=$counter_for_date+1;
       #  else
-
-        $TOTAL_PAID = 0 ;
-        foreach($comments_RET as $comment){
-              //echo $comment['COMMENT'];
-              //jaycee
-              $TOTAL_PAID_TMP = $comment['COMMENT'];
-
-              //echo $TOTAL_PAID_TMP;
-
-              $TOTAL_PAID = $TOTAL_PAID + $TOTAL_PAID_TMP; 
-        }
 
        //jaycee - financial info
        $student_RET = DBGet(DBQuery("SELECT s.estimated_grad_date, s.name_suffix FROM students s WHERE s.student_id='".UserStudentID()."' "));
@@ -114,6 +105,16 @@ if(!$_REQUEST['modfunc'])
             }
         }
         $TOTAL = $reg_fee + $deposit_fee + $school_fee_total + $material_fee_total;
+
+
+        $total_paid =0 ;
+        foreach($comments_RET as $num => $comment_t){
+              
+              $total_paid += $comment_t['COMMENT'] ; 
+        }
+        //echo 'total paid - '.$total_paid;
+
+
         
        echo '<TABLE width="95%" >';
        echo '<TR><td height="30px" colspan=2 class=hseparator><b>Financial Information</b></td></tr><tr><td colspan="2">';
@@ -124,6 +125,7 @@ if(!$_REQUEST['modfunc'])
          echo '<tr><td>School Fee:</td> <td align="right">'.number_format((float)$school_fee_total, 2, '.', '').' </td> <td>SGD</td></tr>';
          echo '<tr><td>Material Fee: </td> <td align="right">'.number_format((float)$material_fee_total, 2, '.', '')." </td> <td>SGD</td></tr>";
          echo "<tr><td colspan=2 class=hseparator></td><td colspan=2 class=hseparator></td></tr>";
+         echo '<tr><td>TOTAL PAID: </td> <td align="right">'.number_format((float)$total_paid, 2, '.', '')." </td> <td>SGD</td></tr>";
          echo '<tr><td>TOTAL: </td> <td align="right">'.number_format((float)$TOTAL, 2, '.', '').' </td> <td>SGD</td></tr>'; 
          //echo '<tr><td>TOTAL PAID: </td> <td align="right">'.$TOTAL_PAID.' </td> <td>SGD</td></tr>'; 
          //echo '<tr><td>Remaining Amount: </td> <td align="right">'. ($TOTAL - $TOTAL_PAID).' </td> <td>SGD</td></tr>'; 
@@ -132,12 +134,20 @@ if(!$_REQUEST['modfunc'])
         echo '<TABLE>';
   
         echo '</tr><TD valign=top>';
+        
+        if ( $total_paid >= $TOTAL){
+          //echo "paid";
+          //update student social security
+          DBQuery("UPDATE students s set s.social_security = 'PAID' WHERE s.STUDENT_ID='".UserStudentID()."'");
+        }
+
         //end jaycee
 
+        
 
 
    
-	   $columns = array('USER_NAME'=>'Entered By','COMMENT_DATE'=>'Date','COMMENT'=>'Amount (SGD)');
+	   $columns = array('USER_NAME'=>'Entered By','COMMENT_DATE'=>'Date','COMMENT'=>'Amount (SGD) - Please input number only');
 	   $link['add']['html'] = array('COMMENT_DATE'=>_makeDate('','COMMENT_DATE',$counter_for_date),'COMMENT'=>_makeCommentsn('','COMMENT'),'USER_NAME'=>'');
 	   if(User('PROFILE')=='admin' ||User('PROFILE')=='teacher')
           {
