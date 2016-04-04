@@ -434,8 +434,8 @@ for($i=1;$i<=count($mp_data);$i++)
                       echo '<br /><div align="center"><input type="button" class=btn_medium value="Close" onclick="window.close();"></div>';
             }
 
-            if($schedule_RET && $_REQUEST['view_mode']=='day_view')
-                        DrawHeader( "<table><tr><td>&nbsp;&nbsp;</td><td>". (ProgramLinkforExport('scheduling/PrintSchedules.php','<img src=assets/print.png>','&modfunc=save&st_arr[]='.UserStudentID().'&mp_id='.$mp_id.'&date1='.$date1.'&include_inactive='.$_REQUEST['include_inactive'].'&_openSIS_PDF=true target=_blank'))."</td><td>". (ProgramLinkforExport('scheduling/PrintSchedules.php','Print Schedule','&modfunc=save&st_arr[]='.UserStudentID().'&mp_id='.$mp_id.'&include_inactive='.$_REQUEST['include_inactive'].'&date1='.$date1.'&_openSIS_PDF=true target=_blank'))."</td></tr></table>");
+            // if($schedule_RET && $_REQUEST['view_mode']=='day_view')
+            //             DrawHeader( "<table><tr><td>&nbsp;&nbsp;</td><td>". (ProgramLinkforExport('scheduling/PrintSchedules.php','<img src=assets/print.png>','&modfunc=save&st_arr[]='.UserStudentID().'&mp_id='.$mp_id.'&date1='.$date1.'&include_inactive='.$_REQUEST['include_inactive'].'&_openSIS_PDF=true target=_blank'))."</td><td>". (ProgramLinkforExport('scheduling/PrintSchedules.php','Print Schedule','&modfunc=save&st_arr[]='.UserStudentID().'&mp_id='.$mp_id.'&include_inactive='.$_REQUEST['include_inactive'].'&date1='.$date1.'&_openSIS_PDF=true target=_blank'))."</td></tr></table>");
 	echo '</FORM>';
          unset($_REQUEST['view_mode']);
 }

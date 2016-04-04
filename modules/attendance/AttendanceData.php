@@ -91,7 +91,9 @@ if(!$_REQUEST['modfunc'])
 
 
 ///////////////////////New Date Picker///////////////////////////////
-    DrawHeaderHome('<table><tr><td>'.DateInputAY($start_date,'start',1).'</td><td>&nbsp;&nbsp;-&nbsp;&nbsp;</td><td>'.DateInputAY($end_date,'end',2).'</td><td> - </td><td>'.$advanced_link.'</td><td>&nbsp;&nbsp;&nbsp;&nbsp;All School &nbsp;&nbsp; <input type="checkbox" value="Y" name="all_school" id="all_school" /></td><td> : <INPUT type=submit value=Go class=btn_medium></td></tr></table>');
+    //jaycee
+    //DrawHeaderHome('<table><tr><td>'.DateInputAY($start_date,'start',1).'</td><td>&nbsp;&nbsp;-&nbsp;&nbsp;</td><td>'.DateInputAY($end_date,'end',2).'</td><td> - </td><td>'.$advanced_link.'</td><td>&nbsp;&nbsp;&nbsp;&nbsp;All School &nbsp;&nbsp; <input type="checkbox" value="Y" name="all_school" id="all_school" checked /></td><td> : <INPUT type=submit value=Go class=btn_medium></td></tr></table>');
+    DrawHeaderHome('<table><tr><td>'.DateInputAY($start_date,'start',1).'</td><td>&nbsp;&nbsp;-&nbsp;&nbsp;</td><td>'.DateInputAY($end_date,'end',2).'</td><td> - </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" value="Y" name="all_school" id="all_school" checked /></td><td> : <INPUT type=submit value=Go class=btn_medium></td></tr></table>');
     echo '</FORM>';
 
 

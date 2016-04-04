@@ -283,6 +283,23 @@ if($_REQUEST['modname']=='grades/HonorRoll.php')
                         	$students_RET[$si] = $sd;
                         }
                         //print_r($students_RET);
+
+
+                         $count =1;
+                         foreach($students_RET as $si=>$sd){
+                         	$student_id=  DBGet(DBQuery('SELECT IS_DISABLE FROM students WHERE student_id ='.$sd['STUDENT_ID']));
+                         	//print_r($student_id);
+                         	//echo $student_id[1]["IS_DISABLE"];
+                         	if ($student_id[1]["IS_DISABLE"] <> 'Y'){
+                         		//echo $student_id[1]["IS_DISABLE"]."here";
+                         		//$sd['FINANCE'] = 'NOT PAID';
+                         		//$students_RET[$si] = $sd;
+                         		$students_tmp[$count] = $sd;
+                         		$count = $count + 1;
+                         	}
+                         }
+ 						$students_RET = $students_tmp;
+
                         
 echo '<div style="overflow:auto; width:820px; overflow-x:scroll;">';
                         echo "<div id='students' >";

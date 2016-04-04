@@ -52,10 +52,12 @@ if($function('Confirm Scheduler Run','Are you sure you want to run the scheduler
     <TR><TD><INPUT type=checkbox name=test_mode   value=Y onclick=showhidediv("div1",this);></TD><TD>Schedule Unscheduled Requests</TD></TR>
     <TR><TD></TD><TD><div id=div1 style=display:none>'.PrepareDateSchedule($date,'_date',false,'').'</div></TD></TR>
  
-    <TR><TD><INPUT type=checkbox name=delete_mode value=Y></TD><TD>Delete Current Schedules</TD></TR>
+    
     </TABLE>'))
 {
 	
+    //jaycee move back to line 54 <TR><TD><INPUT type=checkbox name=delete_mode value=Y></TD><TD>Delete Current Schedules</TD></TR>
+
 	PopTable('header','Scheduler Progress');
 	echo '<CENTER><TABLE cellpadding=0 cellspacing=0><TR><TD><TABLE cellspacing=0 border=0><TR>';
 	for($i=1;$i<=100;$i++)

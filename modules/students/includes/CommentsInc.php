@@ -139,6 +139,8 @@ if(!$_REQUEST['modfunc'])
           //echo "paid";
           //update student social security
           DBQuery("UPDATE students s set s.social_security = 'PAID' WHERE s.STUDENT_ID='".UserStudentID()."'");
+        }else {
+          DBQuery("UPDATE students s set s.social_security = 'NOT PAID' WHERE s.STUDENT_ID='".UserStudentID()."'");
         }
 
         //end jaycee

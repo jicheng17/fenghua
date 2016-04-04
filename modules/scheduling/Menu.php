@@ -29,7 +29,7 @@ include('../../RedirectModulesInc.php');
 $menu['scheduling']['admin'] = array(
 						'scheduling/Schedule.php'=>'Course Schedule / 选课',
       //                   'scheduling/ViewSchedule.php'=>'View Schedule',
-						'scheduling/Requests.php'=>'Student Requests',
+						//'scheduling/Requests.php'=>'Student Requests',
 						// 'scheduling/MassSchedule.php'=>'Group Schedule',
 						// 'scheduling/MassRequests.php'=>'Group Requests',
 						// 'scheduling/MassDrops.php'=>'Group Drops',

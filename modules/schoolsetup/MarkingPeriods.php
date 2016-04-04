@@ -917,15 +917,14 @@ if(clean_param($_REQUEST['tables'],PARAM_NOTAGS) && ($_POST['tables'] || $_REQUE
 				.') AND SCHOOL_ID=\''.UserSchool().'\' AND SYEAR=\''.UserSyear().'\''.(($id!='new')?' AND MARKING_PERIOD_ID!=\''.$id.'\'':'')
 			));
 	
-			if($go)
-                        {
+			            if($go){
 //                            
                             $check_assoc=DBGet(DBQuery('SELECT COUNT(1) as REC_EX FROM student_report_card_grades WHERE MARKING_PERIOD_ID='.$_REQUEST['marking_period_id']));
                             $check_assoc=$check_assoc[1]['REC_EX'];
                             if( (isset($_REQUEST['tables'][$_REQUEST['marking_period_id']]['DOES_GRADES']) || isset($_REQUEST['tables'][$_REQUEST['marking_period_id']]['POST_START_DATE']) || isset($_REQUEST['tables'][$_REQUEST['marking_period_id']]['POST_END_DATE']) ) && $check_assoc>0)
-                            $err_msg='Cannot modify marking period as students have been graded';
+                                $err_msg='Cannot modify marking period as students have been graded';
                             else
-				DBQuery($sql);
+				                DBQuery($sql);
                         }
                         if($asso_err)
                             $err_msg='Start Date or End Date cannot be changed because marking period has association';
