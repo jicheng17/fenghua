@@ -1813,7 +1813,7 @@ function validate_cp_other_fields()
             if(inputs[i].type == "checkbox") 
             {
 //                alert(inputs[i].name+"==tables[course_period_var]["+cp_id+"][DAYS][M]");
-                if(inputs[i].name=="tables[course_period_var]["+cp_id+"][DAYS][M]" || inputs[i].name=="tables[course_period_var]["+cp_id+"][DAYS][T]" ||inputs[i].name=="tables[course_period_var]["+cp_id+"][DAYS][W]" ||inputs[i].name=="tables[course_period_var]["+cp_id+"][DAYS][H]"|| inputs[i].name=="tables[course_period_var]["+cp_id+"][DAYS][F]")
+                if(inputs[i].name=="tables[course_period_var]["+cp_id+"][DAYS][M]" || inputs[i].name=="tables[course_period_var]["+cp_id+"][DAYS][T]" ||inputs[i].name=="tables[course_period_var]["+cp_id+"][DAYS][W]" ||inputs[i].name=="tables[course_period_var]["+cp_id+"][DAYS][H]"|| inputs[i].name=="tables[course_period_var]["+cp_id+"][DAYS][F]" || inputs[i].name=="tables[course_period_var]["+cp_id+"][DAYS][S]" || inputs[i].name=="tables[course_period_var]["+cp_id+"][DAYS][U]" )
                 {   
                     no_checkbox=no_checkbox+1;
                     if(inputs[i].checked)
@@ -1829,15 +1829,16 @@ function validate_cp_other_fields()
             
         }
         if(no_checkbox==0)
-        a.value="1";   
+            a.value="1";   
         if(a.value.trim()=="")
         {
-        document.getElementById("divErr").innerHTML='<font color="red"><b>You must select at least 1 day</b></font>';       
-        return false;
+            //jc
+            //document.getElementById("divErr").innerHTML='<font color="red"><b>You must select at least 1 day</b></font>';       
+            return true;
         }
    }
     else
-    return true;
+        return true;
 }
 
 
